@@ -1,7 +1,7 @@
 emojifont
 ---------
 
-[emoGG](https://github.com/dill/emoGG/tree/master/R) is not a good idea for it render `emoji` picture and creat a layer `geom_emoji` to add emoji.
+In my opinion, [emoGG](https://github.com/dill/emoGG/tree/master/R) is not a good idea for it render `emoji` picture and creat a layer `geom_emoji` to add emoji.
 
 `emoji` should be treated as ordinary font. This maynot be true internally, but it should be in user interface.
 
