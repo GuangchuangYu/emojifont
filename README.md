@@ -89,7 +89,7 @@ ggtree(read.tree(text=tree_text)) + xlim(NA, 7) +
 
 ## Note
 
-`OpenSansEmoji.ttf` in this package is downloaded from [](https://github.com/MorbZ/OpenSansEmoji).
+`OpenSansEmoji.ttf` in this package is downloaded from [https://github.com/MorbZ/OpenSansEmoji](https://github.com/MorbZ/OpenSansEmoji).
 
 Feel free to fork this package to add your favorite Emoji Font.
 
