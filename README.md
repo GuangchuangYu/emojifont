@@ -25,7 +25,7 @@ plot(x, y, cex=0)
 text(x, y, labels=emoji('cow'), cex=1.5, col='steelblue', family='OpenSansEmoji')
 ```
 
-![](https://raw.githubusercontent.com/GuangchuangYu/emojifont/master/inst/figures/figure-markdown_strict/base_emoji-1.png)
+![](https://raw.githubusercontent.com/GuangchuangYu/emojifont/master/inst/figures/base_emoji-1.png)
 
 ggplot2
 -------
@@ -39,7 +39,7 @@ ggplot(d, aes(x, y, color=type, label=label)) +
     geom_text(family="OpenSansEmoji", size=5)
 ```
 
-![](https://raw.githubusercontent.com/GuangchuangYu/emojifont/master/inst/figures/figure-markdown_strict/ggplot_emoji-1.png)
+![](https://raw.githubusercontent.com/GuangchuangYu/emojifont/master/inst/figures/ggplot_emoji-1.png)
 
 ggtree
 ------
@@ -72,4 +72,4 @@ ggtree(read.tree(text=tree_text)) + xlim(NA, 7) +
                color=rainbow_hcl(8))
 ```
 
-![](https://raw.githubusercontent.com/GuangchuangYu/emojifont/master/inst/figures/figure-markdown_strict/ggtree_emoji-1.png)
+![](https://raw.githubusercontent.com/GuangchuangYu/emojifont/master/inst/figures/ggtree_emoji-1.png)
