@@ -6,7 +6,7 @@ emojifont: using emoji font in `R`
 In my opinion, although `emoji` maynot be treated as font internally, but it should be in user interface.
 
 
-It will be more flexible if we can use emoji as ordinary font and in this way user don't need to learn extra stuff.
+It would be more flexible if we can use emoji as ordinary font and in this way user don't need to learn extra stuff.
 
 
 The `emojifont` package is designed to bring `emoji` font to R users and is created for users that are impatient and relutant to learn. 
@@ -99,9 +99,9 @@ ggtree(read.tree(text=tree_text)) + xlim(NA, 7) +
 ![](https://raw.githubusercontent.com/GuangchuangYu/emojifont/master/inst/figures/ggtree_emoji-1.png)
 
 
-# Apple Emoji
+# Apple Color Emoji
 
-Although `R`'s graphical devices don't support Apple Emoji font, it's still possible to use it. We can export the `plot` to `svg` file and render it in `Safari`.
+Although `R`'s graphical devices don't support Apple Color Emoji font, it's still possible to use it. We can export the `plot` to `svg` file and render it in `Safari`.
 
 ```r
 library(gridSVG)
