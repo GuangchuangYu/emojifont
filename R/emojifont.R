@@ -63,7 +63,7 @@ emojifont <- proto(expr={
         system.file("fonts", package="emojifont")
     }
     list_fonts <- function(.) {
-        list.files(.$get_path())
+        list.files(get_path())
     }
     load_font <- function(., font) {
         wd <- getwd()
