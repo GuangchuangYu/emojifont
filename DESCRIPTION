@@ -1,7 +1,7 @@
 Package: emojifont
 Type: Package
 Title: emoji fonts for using in R
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: c(person(given = "Guangchuang", family = "Yu",
 	   	    email = "guangchuangyu@gmail.com",
 		    role  = c("aut", "cre"))
@@ -13,6 +13,7 @@ Description: This package is designed to support R for using emoji in base plot
 Depends:
     R (>= 3.2.2)
 Imports:
+    proto,
     showtext,
     sysfonts
 Suggests:

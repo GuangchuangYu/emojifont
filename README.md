@@ -35,14 +35,22 @@ load.emojifont('OpenSansEmoji.ttf')
 
 # Emoji characters
 
-To use `emoji`, we need to use their corresponding unicode. Emoji unicode can be found in [http://apps.timwhitlock.info/emoji/tables/unicode](http://apps.timwhitlock.info/emoji/tables/unicode), or searched using [remoji](https://github.com/richfitz/remoji) package.
+To use `emoji`, we need to use their corresponding unicode. Emoji unicode can be found in [http://apps.timwhitlock.info/emoji/tables/unicode](http://apps.timwhitlock.info/emoji/tables/unicode), or searched using `search_emoji` function.
 
+```r
+search_emoji('smile')
 
+## [1] "smile"       "smiley"      "sweat_smile" "smiley_cat"  "smile_cat"  
+
+emoji(search_emoji('smile'))
+
+## [1] "\U0001f604" "\U0001f603" "\U0001f605" "\U0001f63a" "\U0001f638"
+
+```
 # Emoji in R plot
 ## base plot
 
 ```r
-require(remoji)
 set.seed(123)
 x <- rnorm(10)
 set.seed(321)
