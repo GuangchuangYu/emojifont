@@ -1,64 +1,7 @@
-
-
-##' list emoji fonts
-##'
-##' 
-##' @title list.emojifonts
-##' @return emoji font files
-##' @export
-##' @author ygc
-list.emojifonts <- function() {
-    emojifont$list_fonts()
-}
-
-##' search emoji
-##'
-##' 
-##' @title search_emoji
-##' @param str string text
-##' @param type one of 'aliases', 'description' and 'tags'
-##' @param approximate logical
-##' @return corresponding aliases, can be used to get unicode by emoji function
-##' @export
-##' @author ygc
-search_emoji <- function(str, type='aliases', approximate=FALSE) {
-    emojifont$search(str=str, type=type, approximate=approximate)
-}
-
-##' convert emoji aliases to unicode
-##'
-##' 
-##' @title emoji
-##' @param aliases aliases
-##' @return unicode
-##' @export
-##' @author ygc
-emoji <- function(aliases) {
-    res <- emojifont$toUnicode(aliases=aliases)
-    ii <- is.na(res)
-    if (any(ii)) {
-        stop('Invalid emoji: ', paste(aliases[ii], collapse=', '))
-    }
-    return(res)
-}
-
-##' load emoji font
-##'
-##' 
-##' @title load.emojifont
-##' @param font one of output from list.emojifonts
-##' @return NULL
-##' @export
-##' @author ygc
-load.emojifont <- function(font = "OpenSansEmoji.ttf") {
-    emojifont$load_font(font=font)
-}
-
-
 ##' @importFrom sysfonts font.add
 ##' @importFrom showtext showtext.auto
 ##' @importFrom proto proto
-emojifont <- proto(expr={
+efproto <- proto(expr={
     get_path <- function(.) {
         system.file("fonts", package="emojifont")
     }
@@ -78,17 +21,16 @@ emojifont <- proto(expr={
         showtext.auto()
         setwd(wd)        
     }
-    search <- function(., str, type, approximate=FALSE) {
+    search <- function(., str, type, approximate=FALSE, font_data=emoji_data) {
         type <- match.arg(type, c('description', 'aliases', 'tags'))
         if (approximate) {
-            i <- agrep(str, emoji_data[, type])
+            i <- agrep(str, font_data[, type])
         } else {
-            i <- grep(str, emoji_data[, type])
+            i <- grep(str, font_data[, type])
         }
-        unlist(emoji_data$aliases[i])
-        ##emoji[i, c('aliases', 'description')]
+        unlist(font_data$aliases[i])
     }
-    toUnicode <- function(., aliases) {
+    toUnicode <- function(., aliases, font_data=emoji_data) {
         ## emoji_data$emoji[match(aliases, emoji_data$aliases)]
         ##
         ## match not work
@@ -100,14 +42,68 @@ emojifont <- proto(expr={
         ## [1] NA
         ##
         ii <- sapply(aliases, function(alias) {
-            i <- which(sapply(emoji_data$aliases, function(x) alias %in% x))
+            i <- which(sapply(font_data$aliases, function(x) alias %in% x))
             if (length(i) == 0)
                 return(NA)
             return(i)
         })
-        emoji_data$emoji[ii]
+        font_data$emoji[ii]
     }
 })
+
+##' list emoji fonts
+##'
+##' 
+##' @title list.emojifonts
+##' @return emoji font files
+##' @export
+##' @author ygc
+list.emojifonts <- function() {
+    efproto$list_fonts()
+}
+
+##' search emoji
+##'
+##' 
+##' @title search_emoji
+##' @param str string text
+##' @param type one of 'aliases', 'description' and 'tags'
+##' @param approximate logical
+##' @return corresponding aliases, can be used to get unicode by emoji function
+##' @export
+##' @author ygc
+search_emoji <- function(str, type='aliases', approximate=FALSE) {
+    efproto$search(str=str, type=type, approximate=approximate)
+}
+
+##' convert emoji aliases to unicode
+##'
+##' 
+##' @title emoji
+##' @param aliases aliases
+##' @return unicode
+##' @export
+##' @author ygc
+emoji <- function(aliases) {
+    res <- efproto$toUnicode(aliases=aliases)
+    ii <- is.na(res)
+    if (any(ii)) {
+        stop('Invalid emoji: ', paste(aliases[ii], collapse=', '))
+    }
+    return(res)
+}
+
+##' load emoji font
+##'
+##' 
+##' @title load.emojifont
+##' @param font one of output from list.emojifonts
+##' @return NULL
+##' @export
+##' @author ygc
+load.emojifont <- function(font = "OpenSansEmoji.ttf") {
+    efproto$load_font(font=font)
+}
 
 
 ##' @importFrom utils download.file
@@ -121,4 +117,3 @@ download_emoji <- function() {
     emoji_data <- fromJSON(readLines(emoji_file))
     save(emoji_data, file="sysdata.rda")
 }
-
