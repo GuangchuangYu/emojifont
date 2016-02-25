@@ -2,15 +2,20 @@
 ##' @importFrom showtext showtext.auto
 ##' @importFrom proto proto
 efproto <- proto(expr={
-    get_path <- function(.) {
-        system.file("fonts", package="emojifont")
+    get_path <- function(., type='emoji') {
+        if (type == 'emoji') {
+            font_folder <- "emoji_fonts"
+        } else {
+            font_folder <- "fonts"
+        }
+        system.file(font_folder, package="emojifont")
     }
-    list_fonts <- function(.) {
-        list.files(get_path())
+    list_fonts <- function(., type) {
+        list.files(get_path(type=type))
     }
-    load_font <- function(., font) {
+    load_font <- function(., font, type='emoji') {
         wd <- getwd()
-        font_path <- get_path()
+        font_path <- get_path(type=type)
         setwd(font_path)
         if (!file.exists(font)) {
             setwd(wd)
@@ -22,7 +27,6 @@ efproto <- proto(expr={
         setwd(wd)        
     }
     search <- function(., str, type, approximate=FALSE, font_data=emoji_data) {
-        type <- match.arg(type, c('description', 'aliases', 'tags'))
         if (approximate) {
             i <- agrep(str, font_data[, type])
         } else {
@@ -47,7 +51,7 @@ efproto <- proto(expr={
                 return(NA)
             return(i)
         })
-        font_data$emoji[ii]
+        font_data[ii,1]
     }
 })
 
@@ -59,7 +63,7 @@ efproto <- proto(expr={
 ##' @export
 ##' @author ygc
 list.emojifonts <- function() {
-    efproto$list_fonts()
+    efproto$list_fonts(type='emoji')
 }
 
 ##' search emoji
@@ -73,7 +77,17 @@ list.emojifonts <- function() {
 ##' @export
 ##' @author ygc
 search_emoji <- function(str, type='aliases', approximate=FALSE) {
+    type <- match.arg(type, c('description', 'aliases', 'tags'))
     efproto$search(str=str, type=type, approximate=approximate)
+}
+
+mapper_ <- function(aliases, font_data) {
+    res <- efproto$toUnicode(aliases=aliases, font_data=font_data)
+    ii <- is.na(res)
+    if (any(ii)) {
+        stop('Invalid: ', paste(aliases[ii], collapse=', '))
+    }
+    return(res)
 }
 
 ##' convert emoji aliases to unicode
@@ -85,12 +99,7 @@ search_emoji <- function(str, type='aliases', approximate=FALSE) {
 ##' @export
 ##' @author ygc
 emoji <- function(aliases) {
-    res <- efproto$toUnicode(aliases=aliases)
-    ii <- is.na(res)
-    if (any(ii)) {
-        stop('Invalid emoji: ', paste(aliases[ii], collapse=', '))
-    }
-    return(res)
+    mapper_(aliases, emoji_data)
 }
 
 ##' load emoji font
