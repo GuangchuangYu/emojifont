@@ -18,6 +18,7 @@ Imports:
     sysfonts
 Suggests:
     knitr,
+    ggplot2
 VignetteBuilder: knitr
 License: Artistic-2.0
 URL: https://github.com/GuangchuangYu/emojifont

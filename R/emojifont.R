@@ -8,7 +8,7 @@
 ##' @export
 ##' @author ygc
 list.emojifonts <- function() {
-    emojifont$list_font()
+    emojifont$list_fonts()
 }
 
 ##' search emoji

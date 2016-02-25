@@ -1,0 +1,173 @@
+---
+title: "An Introduction to emojifont package"
+author: "\\
+
+	Guangchuang Yu (<guangchuangyu@gmail.com>)\\
+
+        School of Public Health, The University of Hong Kong"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+  pdf_document:
+    toc: true
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{emojifont introduction}
+  %\VignetteDepends{ggplot2}
+  %\usepackage[utf8]{inputenc}
+---
+
+```{r style, echo=FALSE, results="asis", message=FALSE}
+knitr::opts_chunk$set(tidy = FALSE,
+		   message = FALSE)
+```
+
+
+```{r echo=FALSE, results="hide", message=FALSE}
+library("ggplot2")
+library("emojifont")
+```
+
+# emojifont: using emoji font in `R`
+
+[emoGG](https://github.com/dill/emoGG/) is a good attemp to add `emoji` in `ggplot2`. It render `emoji` picture (png) and creat a layer, `geom_emoji`, to add emoji.
+
+In my opinion, `emoji` should be treated as ordinary font in user interface, albeit it maynot be true internally.
+
+
+It would be more flexible if we can use emoji as ordinary font and in this way user don't need to learn extra stuff.
+
+
+The `emojifont` package is designed to bring `emoji` font to R users and is created for users that are impatient and relutant to learn. 
+
+The package is very simple, pack some emoji fonts (currently only [OpenSansEmoji.ttf](https://github.com/MorbZ/OpenSansEmoji)) and use [showtext](https://github.com/yixuan/showtext) to render the fonts, then we can use the font in either base plot or ggplot2.
+
+## Installation
+
+```r
+devtools::install_github("GuangchuangYu/emojifont")
+```
+
+
+# Emoji characters
+
+To use `emoji`, we need to use their corresponding unicode. Emoji unicode can be found in [http://apps.timwhitlock.info/emoji/tables/unicode](http://apps.timwhitlock.info/emoji/tables/unicode), or searched using `search_emoji` function. The `search_emoji` function will return [emoji aliases](http://www.emoji-cheat-sheet.com/) which can be converted to unicode by `emoji` function.
+
+```{r}
+library(emojifont)
+
+search_emoji('smile')
+emoji(search_emoji('smile'))
+```
+
+
+# Emoji in R plot
+
+To support using emoji in R plot, we need to load `emoji` font and then use `family` parameter to specify using the font.
+
+## load Emoji font 
+```{r}
+## list available emoji fonts
+list.emojifonts()
+
+## load selected emoji font
+load.emojifont('OpenSansEmoji.ttf')
+```
+
+
+## base plot
+
+```r
+set.seed(123)
+x <- rnorm(10)
+set.seed(321)
+y <- rnorm(10)
+plot(x, y, cex=0)
+text(x, y, labels=emoji('cow'), cex=1.5, col='steelblue', family='OpenSansEmoji')
+```
+
+
+![](https://raw.githubusercontent.com/GuangchuangYu/emojifont/master/inst/figures/base_emoji-1.png)
+
+## ggplot2
+
+```r
+d <- data.frame(x=x, y=y,
+     label = sample(c(emoji('cow'), emoji('camel')), 10, replace=TRUE),
+     type = sample(LETTERS[1:3], 10, replace=TRUE))
+require(ggplot2)
+ggplot(d, aes(x, y, color=type, label=label)) + 
+    geom_text(family="OpenSansEmoji", size=5)
+```
+
+
+![](https://raw.githubusercontent.com/GuangchuangYu/emojifont/master/inst/figures/ggplot_emoji-1.png)
+
+
+## ggtree
+
+```r
+require(ggtree)
+require(colorspace)
+
+tree_text=paste0(
+    "(","(","(",
+       "(",
+            "(",
+               emoji("cow"), ",",
+               "(",
+                  emoji("whale"),",",
+                  emoji("dolphin"),
+               ")",
+            "),",
+            "(",
+               emoji('pig2'),",",
+               emoji('boar'),
+            ")",
+       "),",
+       emoji("camel"),
+    "),", emoji("fish"), "),", 
+emoji("seedling"), ");")
+
+ggtree(read.tree(text=tree_text)) + xlim(NA, 7) +
+   geom_tiplab(family="OpenSansEmoji", size=10,
+               color=rainbow_hcl(8))
+```
+
+![](https://raw.githubusercontent.com/GuangchuangYu/emojifont/master/inst/figures/ggtree_emoji-1.png)
+
+# Apple Color Emoji
+
+Although `R`'s graphical devices don't support `AppleColorEmoji` font, it's still possible to use it. We can export the `plot` to `svg` file and render it in `Safari`.
+
+```r
+library(gridSVG)
+p <-  ggtree(read.tree(text=tree_text), size=2) + geom_tiplab(size=20)
+p <- p %>% phylopic("79ad5f09-cf21-4c89-8e7d-0c82a00ce728", color="firebrick", alpha = .3)
+p <- p + xlim(NA, 7) + ylim(NA, 8.5)
+p
+ps = grid.export("emoji.svg", addClass=T)
+```
+
+![](https://raw.githubusercontent.com/GuangchuangYu/emojifont/master/inst/figures/apple_emoji.png)
+
+
+# Note
+
+`OpenSansEmoji.ttf` in this package is downloaded from [https://github.com/MorbZ/OpenSansEmoji](https://github.com/MorbZ/OpenSansEmoji).
+
+Feel free to fork this package to add your favorite Emoji Font.
+
+# Bugs/Feature requests
+
+If you have any, [let me know](https://github.com/GuangchuangYu/emojifont/issues). Thx!
+
+# Session info
+
+Here is the output of `sessionInfo()` on the system on which this document was compiled:
+```{r echo=FALSE}
+sessionInfo()
+```
+
+
