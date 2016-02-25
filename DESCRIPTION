@@ -1,21 +1,20 @@
 Package: emojifont
 Type: Package
-Title: emoji fonts for using in R
-Version: 0.2.0
+Title: Emoji Fonts for using in R
+Version: 0.2.1
 Authors@R: c(person(given = "Guangchuang", family = "Yu",
 	   	    email = "guangchuangyu@gmail.com",
 		    role  = c("aut", "cre"))
 	    )
-Author: Guangchuang Yu <guangchuangyu@gmail.com>
 Maintainer: Guangchuang Yu <guangchuangyu@gmail.com>
-Description: This package is designed to support R for using emoji in base plot
-    and ggplot.
+Description: An implementation of using emoji font in both base and ggplot2 graphics.
 Depends:
     R (>= 3.2.2)
 Imports:
     proto,
     showtext,
-    sysfonts
+    sysfonts,
+    utils
 Suggests:
     knitr,
     ggplot2

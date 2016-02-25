@@ -80,7 +80,6 @@ emojifont <- proto(expr={
     }
     search <- function(., str, type, approximate=FALSE) {
         type <- match.arg(type, c('description', 'aliases', 'tags'))
-        data(emoji_data)
         if (approximate) {
             i <- agrep(str, emoji_data[, type])
         } else {
@@ -90,7 +89,6 @@ emojifont <- proto(expr={
         ##emoji[i, c('aliases', 'description')]
     }
     toUnicode <- function(., aliases) {
-        data(emoji_data)
         ## emoji_data$emoji[match(aliases, emoji_data$aliases)]
         ##
         ## match not work
@@ -112,18 +110,7 @@ emojifont <- proto(expr={
 })
 
 
-#' Datasets
-#'
-#' emoji_data data
-#'
-#'
-#' @name DataSet
-#' @aliases emoji_data
-#' @docType data
-#' @keywords datasets
-NULL
-
-
+##' @importFrom utils download.file
 download_emoji <- function() {
     url <- "https://raw.githubusercontent.com/github/gemoji/master/db/emoji.json"
     emoji_file <- tempfile(fileext='.json')
@@ -132,6 +119,6 @@ download_emoji <- function() {
     require(jsonlite, character.only=TRUE)
     fromJSON <- eval(parse(text='fromJSON'))
     emoji_data <- fromJSON(readLines(emoji_file))
-    save(emoji_data, file="emoji_data.rda")
+    save(emoji_data, file="sysdata.rda")
 }
 
