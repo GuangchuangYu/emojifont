@@ -7,7 +7,7 @@ Authors@R: c(person(given = "Guangchuang", family = "Yu",
 		    role  = c("aut", "cre"))
 	    )
 Maintainer: Guangchuang Yu <guangchuangyu@gmail.com>
-Description: An implementation of using emoji font in both base and ggplot2 graphics.
+Description: An implementation of using emoji font in both base and 'ggplot2' graphics.
 Depends:
     R (>= 3.2.2)
 Imports:
