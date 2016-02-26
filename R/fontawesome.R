@@ -36,6 +36,7 @@ load.fontawesome <- function(font = "fontawesome-webfont.ttf") {
 }
 
 
+##' @importFrom utils read.delim
 get_fontawesome_data <- function() {
     ## copy font table from:
     ## https://fortawesome.github.io/Font-Awesome/cheatsheet/
