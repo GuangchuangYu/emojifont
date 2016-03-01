@@ -1,6 +1,8 @@
 emojifont: using emoji font in `R`
 ---------
 
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/emojifont)](http://cran.r-project.org/package=emojifont)
+
 [emoGG](https://github.com/dill/emoGG/) is a good attemp to add `emoji` in `ggplot2`. It render `emoji` picture (png) and creat a layer, `geom_emoji`, to add emoji.
 
 In my opinion, `emoji` should be treated as ordinary font in user interface, albeit it maynot be true internally.
