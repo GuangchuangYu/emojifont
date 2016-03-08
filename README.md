@@ -8,11 +8,9 @@ An implementation of using emoji font in both base and 'ggplot2 graphics.
 
 ## Authors ##
 
-Guangchuang YU
+Guangchuang YU <http://guangchuangyu.github.io>
 
 School of Public Health, The University of Hong Kong 
-
-<http://guangchuangyu.github.io>
 
 ## Installation ##
 
