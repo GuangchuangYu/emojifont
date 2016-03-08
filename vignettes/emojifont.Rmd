@@ -150,7 +150,7 @@ p
 ps = grid.export("emoji.svg", addClass=T)
 ```
 
-![](figures/apple_emoji.png)
+![](figures/apple_emoji2.png)
 
 
 # Note
