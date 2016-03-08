@@ -34,7 +34,7 @@ In addition to emoji font, I also packed other iconic fonts into this package.
 Currently, this package support Emoji Font and Font Awesome.
 
 + `OpenSansEmoji.ttf` is downloaded from <https://github.com/MorbZ/OpenSansEmoji>
-+ `fontawesome-webfont` is downloaded from <https://github.com/FortAwesome/Font-Awesome>.
++ `fontawesome-webfont.ttf` is downloaded from <https://github.com/FortAwesome/Font-Awesome>.
 
 Feel free to fork this package to add your favorite iconic fonts.
 
