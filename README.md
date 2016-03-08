@@ -27,7 +27,7 @@ Or the development version from github:
 ```r
 ## install.packages("devtools")
 devtools::install_github("GuangchuangYu/emojifont")
-
+```
 
 ## Note
 
