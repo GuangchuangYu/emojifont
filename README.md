@@ -2,6 +2,9 @@ emojifont: Emoji Fonts for using in R
 ---------
 
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/emojifont)](http://cran.r-project.org/package=emojifont)
+![](http://cranlogs.r-pkg.org/badges/grand-total/emojifont?color=brightgreen)
+![](http://cranlogs.r-pkg.org/badges/emojifont?color=brightgreen)
+![](http://cranlogs.r-pkg.org/badges/last-week/emojifont?color=brightgreen)
 
 An implementation of using emoji font in both base and 'ggplot2 graphics.
 
