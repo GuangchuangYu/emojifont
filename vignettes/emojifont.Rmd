@@ -152,12 +152,46 @@ ps = grid.export("emoji.svg", addClass=T)
 
 ![](figures/apple_emoji2.png)
 
+# Font Awesome
+
+The `emojifont` package was initially designed for using emoji font. I found that [FontAwesome](http://fontawesome.io/cheatsheet/) is quite interesting especially in technical world.
+
+
+The usage is quite similar as using emoji.
+
+```r
+load.fontawesome()
+
+set.seed(2016-03-09)
+fa <- fontawesome(c('fa-github', 'fa-weibo', 'fa-twitter', 'fa-android', 'fa-coffee'))
+d <- data.frame(x=rnorm(20), 
+                y=rnorm(20), 
+     	        label=sample(fa, 20, replace=T))
+
+ggplot(d, aes(x, y, color=label)) + 
+   geom_text(aes(label=label), family='fontawesome-webfont')+
+     xlab(NULL)+ylab(NULL)
+```
+
+![](figures/fontawesome.png)
+
+# Limitation
+
+`RStudio` using a different way to open graphics device and `showtext` is currently incompatible with it.
+
+Since `emojifont` use `showtext` as backend to parse emoji font, it also incompatible with `RStudio`.
+
+The solution is to manually open a window by calling `X11()` in Linux, `quartz()` in Mac or `windows()` in Windows, and create plots on top of that, instead of the built-in device offered by `RStudio`.
+
 
 # Note
 
-`OpenSansEmoji.ttf` in this package is downloaded from [https://github.com/MorbZ/OpenSansEmoji](https://github.com/MorbZ/OpenSansEmoji).
+Currently, this package support Emoji Font and Font Awesome.
 
-Feel free to fork this package to add your favorite Emoji Font.
++ `OpenSansEmoji.ttf` is downloaded from <https://github.com/MorbZ/OpenSansEmoji>
++ `fontawesome-webfont.ttf` is downloaded from <https://github.com/FortAwesome/Font-Awesome>.
+
+Feel free to fork this package to add your favorite iconic fonts.
 
 # Bugs/Feature requests
 
