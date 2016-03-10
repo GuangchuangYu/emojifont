@@ -45,10 +45,18 @@ The package is very simple, pack some emoji fonts (currently only [OpenSansEmoji
 
 ## Installation
 
+Get the released version from CRAN:
+
 ```r
-devtools::install_github("GuangchuangYu/emojifont")
+install.packages("emojifont")
 ```
 
+Or the development version from github:
+
+```r
+## install.packages("devtools")
+devtools::install <- github("GuangchuangYu/emojifont")
+```
 
 # Emoji characters
 
