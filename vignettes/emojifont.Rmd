@@ -15,6 +15,8 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteIndexEntry{emojifont introduction}
   %\VignetteDepends{ggplot2}
+  %\VignetteDepends{ggtree}
+  %\VignetteDepends{colorspace}
   %\usepackage[utf8]{inputenc}
 ---
 
@@ -27,6 +29,7 @@ knitr::opts_chunk$set(tidy = FALSE,
 ```{r echo=FALSE, results="hide", message=FALSE}
 library("ggplot2")
 library("emojifont")
+library("colorspace")
 ```
 
 # emojifont: using emoji font in `R`
@@ -55,7 +58,7 @@ Or the development version from github:
 
 ```r
 ## install.packages("devtools")
-devtools::install <- github("GuangchuangYu/emojifont")
+devtools::install_github("GuangchuangYu/emojifont")
 ```
 
 # Emoji characters
@@ -86,7 +89,7 @@ load.emojifont('OpenSansEmoji.ttf')
 
 ## base plot
 
-```r
+```{r fig.showtext=TRUE}
 set.seed(123)
 x <- rnorm(10)
 set.seed(321)
@@ -96,28 +99,25 @@ text(x, y, labels=emoji('cow'), cex=1.5, col='steelblue', family='OpenSansEmoji'
 ```
 
 
-![](figures/base_emoji-1.png)
-
 ## ggplot2
 
-```r
+```{r fig.showtext=TRUE}
 d <- data.frame(x=x, y=y,
      label = sample(c(emoji('cow'), emoji('camel')), 10, replace=TRUE),
      type = sample(LETTERS[1:3], 10, replace=TRUE))
-require(ggplot2)
+
+library("ggplot2")
 ggplot(d, aes(x, y, color=type, label=label)) + 
-    geom_text(family="OpenSansEmoji", size=5)
+    geom_text(family="OpenSansEmoji", size=6)
 ```
 
-
-![](figures/ggplot_emoji-1.png)
 
 
 ## ggtree
 
-```r
-require(ggtree)
-require(colorspace)
+```{r fig.showtext=TRUE}
+library("ggtree")
+library("colorspace")
 
 tree_text=paste0(
     "(","(","(",
@@ -139,11 +139,9 @@ tree_text=paste0(
 emoji("seedling"), ");")
 
 ggtree(read.tree(text=tree_text)) + xlim(NA, 7) +
-   geom_tiplab(family="OpenSansEmoji", size=10,
-               color=rainbow_hcl(8))
-```
-
-![](figures/ggtree_emoji-1.png)
+    geom_tiplab(family="OpenSansEmoji", size=10,
+                color=rainbow_hcl(8))
+```	
 
 # Apple Color Emoji
 
@@ -167,7 +165,7 @@ The `emojifont` package was initially designed for using emoji font. I found tha
 
 The usage is quite similar as using emoji.
 
-```r
+```{r fig.showtext=TRUE}
 load.fontawesome()
 
 set.seed(2016-03-09)
@@ -176,12 +174,12 @@ d <- data.frame(x=rnorm(20),
                 y=rnorm(20), 
      	        label=sample(fa, 20, replace=T))
 
-ggplot(d, aes(x, y, color=label)) + 
-   geom_text(aes(label=label), family='fontawesome-webfont')+
-     xlab(NULL)+ylab(NULL)
+ggplot(d, aes(x, y, color=label, label=label)) + 
+    geom_text(family='fontawesome-webfont', size=6)+
+    xlab(NULL)+ylab(NULL) +
+    theme(legend.text=element_text(family='fontawesome-webfont'))
 ```
 
-![](figures/fontawesome.png)
 
 # Limitation
 

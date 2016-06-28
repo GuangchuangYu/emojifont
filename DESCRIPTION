@@ -1,7 +1,7 @@
 Package: emojifont
 Type: Package
 Title: Emoji Fonts for using in R
-Version: 0.3.3
+Version: 0.3.4
 Authors@R: c(person(given = "Guangchuang", family = "Yu",
 	   	    email = "guangchuangyu@gmail.com",
 		    role  = c("aut", "cre"))
@@ -16,8 +16,10 @@ Imports:
     sysfonts,
     utils
 Suggests:
-    knitr,
-    ggplot2
+    colorspace,
+    ggplot2,
+    ggtree,
+    knitr
 VignetteBuilder: knitr
 License: Artistic-2.0
 URL: https://github.com/GuangchuangYu/emojifont
