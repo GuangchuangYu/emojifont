@@ -30,8 +30,17 @@ code is hosted on <a href="https://github.com/GuangchuangYu/emojifont"><i class=
 
 Guangchuang Yu, School of Public Health, The University of Hong Kong.
 
+## <i class="fa fa-download"></i> Installation
+
+To install `emojifont`, start R and enter:
+
+```r
+install.packages("emojifont")
+```
 
 ## <i class="fa fa-book"></i> Examples
+
+#### <i class="fa fa-angle-double-right"></i> base plot
 
 ```r
 require(remoji)
@@ -45,6 +54,8 @@ text(x, y, labels=emoji('cow'), cex=1.5, col='steelblue', family='OpenSansEmoji'
 
 ![](https://raw.githubusercontent.com/GuangchuangYu/emojifont/master/vignettes/figures/base_emoji-1.png)
 
+#### <i class="fa fa-angle-double-right"></i> ggplot2
+
 ```r
 dd=data.frame(x=emoji(c("satisfied", "disapointed")), y=c(50, 10))
 emoji_text=element_text(family="OpenSansEmoji", size=20)
@@ -56,6 +67,8 @@ ggplot(dd, aes(x, y)) + geom_bar(stat='identity', aes(fill=x)) +
 
 ![](http://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-12-16%2011.10.51.png)
 
+
+#### <i class="fa fa-angle-double-right"></i> ggtree
 
 ```r
 require(ggtree)
@@ -89,3 +102,7 @@ ggtree(read.tree(text=tree_text)) + xlim(NA, 7) +
 
 Found out more on <https://cran.r-project.org/web/packages/emojifont/vignettes/emojifont.html>.
 
+## <i class="fa fa-wordpress"></i> Blog posts
+
++ [use emoji font in R](https://guangchuangyu.github.io/2015/12/use-emoji-font-in-r)
++ [font awesome supported in emojifont](https://guangchuangyu.github.io/2016/03/font-awesome-supported-in-emojifont)

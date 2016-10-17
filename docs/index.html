@@ -163,7 +163,19 @@
         <li class="main active"><a href="#author"> Author</a></li>
         
     
+        <li class="main "><a href="#installation"> Installation</a></li>
+        
+    
         <li class="main "><a href="#examples"> Examples</a></li>
+        
+            <li><a href="#base-plot"> base plot</a></li>
+        
+            <li><a href="#ggplot2"> ggplot2</a></li>
+        
+            <li><a href="#ggtree"> ggtree</a></li>
+        
+    
+        <li class="main "><a href="#blog-posts"> Blog posts</a></li>
         
     
     </ul>
@@ -199,7 +211,13 @@
 code is hosted on <a href="https://github.com/GuangchuangYu/emojifont"><i class="fa fa-github fa-lg"></i> GitHub</a>.</p>
 <h2 id="author"><i class="fa fa-user"></i> Author</h2>
 <p>Guangchuang Yu, School of Public Health, The University of Hong Kong.</p>
+<h2 id="installation"><i class="fa fa-download"></i> Installation</h2>
+<p>To install <code>emojifont</code>, start R and enter:</p>
+<pre><code class="r">install.packages(&quot;emojifont&quot;)
+</code></pre>
+
 <h2 id="examples"><i class="fa fa-book"></i> Examples</h2>
+<h4 id="base-plot"><i class="fa fa-angle-double-right"></i> base plot</h4>
 <pre><code class="r">require(remoji)
 set.seed(123)
 x &lt;- rnorm(10)
@@ -210,6 +228,7 @@ text(x, y, labels=emoji('cow'), cex=1.5, col='steelblue', family='OpenSansEmoji'
 </code></pre>
 
 <p><img alt="" src="https://raw.githubusercontent.com/GuangchuangYu/emojifont/master/vignettes/figures/base_emoji-1.png" /></p>
+<h4 id="ggplot2"><i class="fa fa-angle-double-right"></i> ggplot2</h4>
 <pre><code class="r">dd=data.frame(x=emoji(c(&quot;satisfied&quot;, &quot;disapointed&quot;)), y=c(50, 10))
 emoji_text=element_text(family=&quot;OpenSansEmoji&quot;, size=20)
 ggplot(dd, aes(x, y)) + geom_bar(stat='identity', aes(fill=x)) +
@@ -219,6 +238,7 @@ ggplot(dd, aes(x, y)) + geom_bar(stat='identity', aes(fill=x)) +
 </code></pre>
 
 <p><img alt="" src="http://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-12-16%2011.10.51.png" /></p>
+<h4 id="ggtree"><i class="fa fa-angle-double-right"></i> ggtree</h4>
 <pre><code class="r">require(ggtree)
 require(colorspace)
 
@@ -247,7 +267,12 @@ ggtree(read.tree(text=tree_text)) + xlim(NA, 7) +
 </code></pre>
 
 <p><img alt="" src="https://raw.githubusercontent.com/GuangchuangYu/emojifont/master/vignettes/figures/ggtree_emoji-1.png" /></p>
-<p>Found out more on <a href="https://cran.r-project.org/web/packages/emojifont/vignettes/emojifont.html">https://cran.r-project.org/web/packages/emojifont/vignettes/emojifont.html</a>.</p></div>
+<p>Found out more on <a href="https://cran.r-project.org/web/packages/emojifont/vignettes/emojifont.html">https://cran.r-project.org/web/packages/emojifont/vignettes/emojifont.html</a>.</p>
+<h2 id="blog-posts"><i class="fa fa-wordpress"></i> Blog posts</h2>
+<ul>
+<li><a href="https://guangchuangyu.github.io/2015/12/use-emoji-font-in-r">use emoji font in R</a></li>
+<li><a href="https://guangchuangyu.github.io/2016/03/font-awesome-supported-in-emojifont">font awesome supported in emojifont</a></li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">

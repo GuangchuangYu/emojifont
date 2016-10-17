@@ -2,9 +2,11 @@ PKGNAME := $(shell sed -n "s/Package: *\([^ ]*\)/\1/p" DESCRIPTION)
 PKGVERS := $(shell sed -n "s/Version: *\([^ ]*\)/\1/p" DESCRIPTION)
 PKGSRC  := $(shell basename `pwd`)
 
-all: docs check clean
+all: rd check clean
 
-docs:
+alldocs: rd site
+
+rd:
 	Rscript -e 'roxygen2::roxygenise(".")'
 
 build:
