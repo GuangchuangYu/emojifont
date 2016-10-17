@@ -1,11 +1,15 @@
+CHANGES IN VERSION 0.3.5
+------------------------
+ o sample_emoji <2016-10-17, Mon>
+
 CHANGES IN VERSION 0.3.4
 ------------------------
  o update vignette <2016-06-28, Tue>
- 
+
 CHANGES IN VERSION 0.3.3
 ------------------------
  o update fontawesome lookup table <2016-04-21, Thu>
- 
+
 CHANGES IN VERSION 0.3.2
 ------------------------
  o update README and vignette <2016-03-09, Wed>
@@ -17,7 +21,7 @@ CHANGES IN VERSION 0.3.0
 CHANGES IN VERSION 0.2.1
 ------------------------
  o fixed R CMD check --as-cran issus <2016-02-25, Thu>
- 
+
 CHANGES IN VERSION 0.2.0
 ------------------------
  o add vignette <2016-02-25, Thu>

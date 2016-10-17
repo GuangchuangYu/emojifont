@@ -24,7 +24,7 @@ efproto <- proto(expr={
 
         font.add(sub("\\..*", "", font), font)
         showtext.auto()
-        setwd(wd)        
+        setwd(wd)
     }
     search <- function(., str, type, approximate=FALSE, font_data=emoji_data) {
         if (approximate) {
@@ -57,7 +57,7 @@ efproto <- proto(expr={
 
 ##' list emoji fonts
 ##'
-##' 
+##'
 ##' @title list.emojifonts
 ##' @return emoji font files
 ##' @export
@@ -68,7 +68,7 @@ list.emojifonts <- function() {
 
 ##' search emoji
 ##'
-##' 
+##'
 ##' @title search_emoji
 ##' @param str string text
 ##' @param type one of 'aliases', 'description' and 'tags'
@@ -79,6 +79,19 @@ list.emojifonts <- function() {
 search_emoji <- function(str, type='aliases', approximate=FALSE) {
     type <- match.arg(type, c('description', 'aliases', 'tags'))
     efproto$search(str=str, type=type, approximate=approximate)
+}
+
+##' random emoji
+##'
+##'
+##' @title sample_emoji
+##' @param size a non-negative integer giving the number of items to choose
+##' @param replace Should sampling be with replacement?
+##' @return random emoji
+##' @export
+##' @author guangchuang yu
+sample_emoji <- function(size, replace=FALSE) {
+    sample(unlist(emoji_data$aliases), size, replace)
 }
 
 mapper_ <- function(aliases, font_data) {
@@ -92,7 +105,7 @@ mapper_ <- function(aliases, font_data) {
 
 ##' convert emoji aliases to unicode
 ##'
-##' 
+##'
 ##' @title emoji
 ##' @param aliases aliases
 ##' @return unicode
@@ -104,7 +117,7 @@ emoji <- function(aliases) {
 
 ##' load emoji font
 ##'
-##' 
+##'
 ##' @title load.emojifont
 ##' @param font one of output from list.emojifonts
 ##' @return NULL

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>https://guangchuangyu.github.io/emojifont/</loc>
+     <lastmod>2016-10-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>https://guangchuangyu.github.io/emojifont/ChIPseeker/</loc>
+     <lastmod>2016-10-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://guangchuangyu.github.io/emojifont/clusterProfiler/</loc>
+     <lastmod>2016-10-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://guangchuangyu.github.io/emojifont/DOSE/</loc>
+     <lastmod>2016-10-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://guangchuangyu.github.io/emojifont/emojifont/</loc>
+     <lastmod>2016-10-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://guangchuangyu.github.io/emojifont/ggtree/</loc>
+     <lastmod>2016-10-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://guangchuangyu.github.io/emojifont/GOSemSim/</loc>
+     <lastmod>2016-10-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://guangchuangyu.github.io/emojifont/meshes/</loc>
+     <lastmod>2016-10-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://guangchuangyu.github.io/emojifont/ReactomePA/</loc>
+     <lastmod>2016-10-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+</urlset>

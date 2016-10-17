@@ -1,0 +1,59 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "emojifont\n is an implementation of using emoji font in both base and\n'ggplot2' graphics. \nemojifont\n is released on\n\nCRAN\n and the source\ncode is hosted on \n GitHub\n.\n\n\n Author\n\n\nGuangchuang Yu, School of Public Health, The University of Hong Kong.\n\n\n Examples\n\n\nrequire(remoji)\nset.seed(123)\nx \n- rnorm(10)\nset.seed(321)\ny \n- rnorm(10)\nplot(x, y, cex=0)\ntext(x, y, labels=emoji('cow'), cex=1.5, col='steelblue', family='OpenSansEmoji')\n\n\n\n\n\n\ndd=data.frame(x=emoji(c(\nsatisfied\n, \ndisapointed\n)), y=c(50, 10))\nemoji_text=element_text(family=\nOpenSansEmoji\n, size=20)\nggplot(dd, aes(x, y)) + geom_bar(stat='identity', aes(fill=x)) +\n     ggtitle(paste(emoji(c(\n+1\n, \n-1\n)), collapse=\n \n))+\n     theme(axis.text.x = emoji_text, legend.text=emoji_text, title=emoji_text) +\n     xlab(NULL)+ylab(NULL)\n\n\n\n\n\n\nrequire(ggtree)\nrequire(colorspace)\n\ntree_text=paste0(\n    \n(\n,\n(\n,\n(\n,\n       \n(\n,\n            \n(\n,\n               emoji(\ncow\n), \n,\n,\n               \n(\n,\n                  emoji(\nwhale\n),\n,\n,\n                  emoji(\ndolphin\n),\n               \n)\n,\n            \n),\n,\n            \n(\n,\n               emoji('pig2'),\n,\n,\n               emoji('boar'),\n            \n)\n,\n       \n),\n,\n       emoji(\ncamel\n),\n    \n),\n, emoji(\nfish\n), \n),\n,\nemoji(\nseedling\n), \n);\n)\n\nggtree(read.tree(text=tree_text)) + xlim(NA, 7) +\n   geom_tiplab(family=\nOpenSansEmoji\n, size=10,\n               color=rainbow_hcl(8))\n\n\n\n\n\n\nFound out more on \nhttps://cran.r-project.org/web/packages/emojifont/vignettes/emojifont.html\n.", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#author", 
+            "text": "Guangchuang Yu, School of Public Health, The University of Hong Kong.", 
+            "title": " Author"
+        }, 
+        {
+            "location": "/#examples", 
+            "text": "require(remoji)\nset.seed(123)\nx  - rnorm(10)\nset.seed(321)\ny  - rnorm(10)\nplot(x, y, cex=0)\ntext(x, y, labels=emoji('cow'), cex=1.5, col='steelblue', family='OpenSansEmoji')   dd=data.frame(x=emoji(c( satisfied ,  disapointed )), y=c(50, 10))\nemoji_text=element_text(family= OpenSansEmoji , size=20)\nggplot(dd, aes(x, y)) + geom_bar(stat='identity', aes(fill=x)) +\n     ggtitle(paste(emoji(c( +1 ,  -1 )), collapse=   ))+\n     theme(axis.text.x = emoji_text, legend.text=emoji_text, title=emoji_text) +\n     xlab(NULL)+ylab(NULL)   require(ggtree)\nrequire(colorspace)\n\ntree_text=paste0(\n     ( , ( , ( ,\n        ( ,\n             ( ,\n               emoji( cow ),  , ,\n                ( ,\n                  emoji( whale ), , ,\n                  emoji( dolphin ),\n                ) ,\n             ), ,\n             ( ,\n               emoji('pig2'), , ,\n               emoji('boar'),\n             ) ,\n        ), ,\n       emoji( camel ),\n     ), , emoji( fish ),  ), ,\nemoji( seedling ),  ); )\n\nggtree(read.tree(text=tree_text)) + xlim(NA, 7) +\n   geom_tiplab(family= OpenSansEmoji , size=10,\n               color=rainbow_hcl(8))   Found out more on  https://cran.r-project.org/web/packages/emojifont/vignettes/emojifont.html .", 
+            "title": " Examples"
+        }, 
+        {
+            "location": "/ChIPseeker/", 
+            "text": "", 
+            "title": "ChIPseeker"
+        }, 
+        {
+            "location": "/clusterProfiler/", 
+            "text": "", 
+            "title": "clusterProfiler"
+        }, 
+        {
+            "location": "/DOSE/", 
+            "text": "", 
+            "title": "DOSE"
+        }, 
+        {
+            "location": "/emojifont/", 
+            "text": "", 
+            "title": "emojifont"
+        }, 
+        {
+            "location": "/ggtree/", 
+            "text": "", 
+            "title": "ggtree"
+        }, 
+        {
+            "location": "/GOSemSim/", 
+            "text": "", 
+            "title": "GOSemSim"
+        }, 
+        {
+            "location": "/meshes/", 
+            "text": "", 
+            "title": "meshes"
+        }, 
+        {
+            "location": "/ReactomePA/", 
+            "text": "", 
+            "title": "ReactomePA"
+        }
+    ]
+}
