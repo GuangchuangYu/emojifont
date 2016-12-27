@@ -1,3 +1,7 @@
+CHANGES IN VERSION 0.3.6
+------------------------
+ o fixed issue of returning long list of NA if emoji not found <2016-12-28, Wed>
+ 
 CHANGES IN VERSION 0.3.5
 ------------------------
  o sample_emoji <2016-10-17, Mon>

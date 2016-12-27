@@ -51,6 +51,8 @@ efproto <- proto(expr={
                 return(NA)
             return(i)
         })
+        if (all(is.na(ii)))
+            return(NA)
         font_data[ii,1]
     }
 })
