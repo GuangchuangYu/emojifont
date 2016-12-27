@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/",
-            "text": "emojifont\n is an implementation of using emoji font in both base and\n'ggplot2' graphics. \nemojifont\n is released on\n\nCRAN\n and the source\ncode is hosted on \n GitHub\n.\n\n\n Author\n\n\nGuangchuang Yu, School of Public Health, The University of Hong Kong.\n\n\n Installation\n\n\nTo install \nemojifont\n, start R and enter:\n\n\ninstall.packages(\"emojifont\")\n\n\n\n\n Examples\n\n\n base plot\n\n\nrequire(remoji)\nset.seed(123)\nx <- rnorm(10)\nset.seed(321)\ny <- rnorm(10)\nplot(x, y, cex=0)\ntext(x, y, labels=emoji('cow'), cex=1.5, col='steelblue', family='OpenSansEmoji')\n\n\n\n\n\n\n ggplot2\n\n\ndd=data.frame(x=emoji(c(\"satisfied\", \"disapointed\")), y=c(50, 10))\nemoji_text=element_text(family=\"OpenSansEmoji\", size=20)\nggplot(dd, aes(x, y)) + geom_bar(stat='identity', aes(fill=x)) +\n     ggtitle(paste(emoji(c(\"+1\", \"-1\")), collapse=\" \"))+\n     theme(axis.text.x = emoji_text, legend.text=emoji_text, title=emoji_text) +\n     xlab(NULL)+ylab(NULL)\n\n\n\n\n\n\n ggtree\n\n\nrequire(ggtree)\nrequire(colorspace)\n\ntree_text=paste0(\n    \"(\",\"(\",\"(\",\n       \"(\",\n            \"(\",\n               emoji(\"cow\"), \",\",\n               \"(\",\n                  emoji(\"whale\"),\",\",\n                  emoji(\"dolphin\"),\n               \")\",\n            \"),\",\n            \"(\",\n               emoji('pig2'),\",\",\n               emoji('boar'),\n            \")\",\n       \"),\",\n       emoji(\"camel\"),\n    \"),\", emoji(\"fish\"), \"),\",\nemoji(\"seedling\"), \");\")\n\nggtree(read.tree(text=tree_text)) + xlim(NA, 7) +\n   geom_tiplab(family=\"OpenSansEmoji\", size=10,\n               color=rainbow_hcl(8))\n\n\n\n\n\n\nFound out more on \nhttps://cran.r-project.org/web/packages/emojifont/vignettes/emojifont.html\n.\n\n\n Blog posts\n\n\n\n\nuse emoji font in R\n\n\nfont awesome supported in emojifont",
+            "text": "emojifont\n is an implementation of using emoji font in both base and\n'ggplot2' graphics. \nemojifont\n is released on\n\nCRAN\n and the source\ncode is hosted on \n GitHub\n.\n\n\n Author\n\n\nGuangchuang Yu, School of Public Health, The University of Hong Kong.\n\n\n Installation\n\n\nTo install \nemojifont\n, start R and enter:\n\n\ninstall.packages(\"emojifont\")\n\n\n\n\n Examples\n\n\n base plot\n\n\nrequire(remoji)\nset.seed(123)\nx <- rnorm(10)\nset.seed(321)\ny <- rnorm(10)\nplot(x, y, cex=0)\ntext(x, y, labels=emoji('cow'), cex=1.5, col='steelblue', family='OpenSansEmoji')\n\n\n\n\n\n\n ggplot2\n\n\ndd=data.frame(x=emoji(c(\"satisfied\", \"disapointed\")), y=c(50, 10))\nemoji_text=element_text(family=\"OpenSansEmoji\", size=20)\nggplot(dd, aes(x, y)) + geom_bar(stat='identity', aes(fill=x)) +\n     ggtitle(paste(emoji(c(\"+1\", \"-1\")), collapse=\" \"))+\n     theme(axis.text.x = emoji_text, legend.text=emoji_text, title=emoji_text) +\n     xlab(NULL)+ylab(NULL)\n\n\n\n\n\n\n ggtree\n\n\nrequire(ggtree)\nrequire(colorspace)\n\ntree_text=paste0(\n    \"(\",\"(\",\"(\",\n       \"(\",\n            \"(\",\n               emoji(\"cow\"), \",\",\n               \"(\",\n                  emoji(\"whale\"),\",\",\n                  emoji(\"dolphin\"),\n               \")\",\n            \"),\",\n            \"(\",\n               emoji('pig2'),\",\",\n               emoji('boar'),\n            \")\",\n       \"),\",\n       emoji(\"camel\"),\n    \"),\", emoji(\"fish\"), \"),\",\nemoji(\"seedling\"), \");\")\n\nggtree(read.tree(text=tree_text)) + xlim(NA, 7) +\n   geom_tiplab(family=\"OpenSansEmoji\", size=10,\n               color=rainbow_hcl(8))\n\n\n\n\n\n\nFound out more on \nhttps://cran.r-project.org/web/packages/emojifont/vignettes/emojifont.html\n.",
             "title": "Home"
         },
         {
@@ -36,9 +36,19 @@
             "title": " ggtree"
         },
         {
-            "location": "/#blog-posts",
-            "text": "use emoji font in R  font awesome supported in emojifont",
-            "title": " Blog posts"
+            "location": "/emojifontR/",
+            "text": "",
+            "title": "use emoji font in R"
+        },
+        {
+            "location": "/fontawesome/",
+            "text": "",
+            "title": "font awesome supported in emojifont"
+        },
+        {
+            "location": "/gallery/",
+            "text": "@drob\n and \n@guangchuangyu\n, this is data surfing (air quality data from Lima, Peru) / fun with your cool pkgs. Thx! \npic.twitter.com/ikinjxDDZL\n\u2014 Ma\u00eblle Salmon (@ma_salmon) \nMarch 6, 2016\n\n\n\n16/04/25 \u516c\u958b\nR\u3067\u304a\u904a\u3073\uff1a\u7d75\u6587\u5b57\u3092\u30d7\u30ed\u30c3\u30c8\u300cemojifont\u300d\u30d1\u30c3\u30b1\u30fc\u30b8 \nhttps://t.co/D2ClyMQMxX\n\u2014 \u304b\u3089\u3060\u306b\u3044\u3044\u3082\u306e (@KaradaGood) \nApril 24, 2016\n\n\n\nhow about using emoji to label host species in phylogenetic tree? \n#rstats\n \n#visualization\n \n#ggtree\n \n#emojifont\n \npic.twitter.com/MRKQvNNAUh\n\u2014 Guangchuang Yu (@guangchuangyu) \nMarch 11, 2016\n\n\n\n@drob\n \n@timelyportfolio\n back in March I celebrated my PhD thesis submission with gganimate \npic.twitter.com/OVNDgTC2i4\n\u2014 Ma\u00eblle Salmon (@ma_salmon) \nNovember 18, 2016\n\n\n\nDistribution of Chinese zodiac signs at the family holiday party. \nhttps://t.co/oSMyX4dome\n \n@guangchuangyu\n \npic.twitter.com/Ac6V1kuRjZ\n\u2014 Joseph Stachelek (@jjstache) \nDecember 26, 2016",
+            "title": "Gallery"
         },
         {
             "location": "/ChIPseeker/",

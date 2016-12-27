@@ -89,7 +89,3 @@ ggtree(read.tree(text=tree_text)) + xlim(NA, 7) +
 
 Found out more on <https://cran.r-project.org/web/packages/emojifont/vignettes/emojifont.html>.
 
-## <i class="fa fa-wordpress"></i> Blog posts
-
-+ [use emoji font in R](https://guangchuangyu.github.io/2015/12/use-emoji-font-in-r)
-+ [font awesome supported in emojifont](https://guangchuangyu.github.io/2016/03/font-awesome-supported-in-emojifont)

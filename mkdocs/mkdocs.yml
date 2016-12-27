@@ -7,6 +7,10 @@ theme: yeti
 google_analytics: ['UA-77901140-1', 'guangchuangyu.github.io']
 pages:
 - Home: index.md
+- Blog:
+  - use emoji font in R: emojifontR.md
+  - font awesome supported in emojifont: fontawesome.md
+- Gallery: gallery.md
 - My Software:
   - ChIPseeker: ChIPseeker.md
   - clusterProfiler: clusterProfiler.md

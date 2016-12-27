@@ -43,6 +43,8 @@ mdfiles:
 	cd mkdocs;\
 	Rscript -e 'library(ypages); gendoc("src/index.md", "blue", "docs/index.md")';\
 	cd docs;\
+	ln -f -s ../src/gallery.md ./;\
+	ln -f -s ../emojifont/* ./;\
 	ln -f -s ../mysoftware/* ./
 
 clean:

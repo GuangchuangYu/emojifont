@@ -1,0 +1,1 @@
+../emojifont/fontawesome.md
