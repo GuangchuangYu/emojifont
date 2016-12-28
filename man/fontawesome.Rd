@@ -15,6 +15,9 @@ text
 \description{
 convert fontawesome aliases to text
 }
+\examples{
+fontawesome('fa-twitter')
+}
 \author{
 ygc
 }

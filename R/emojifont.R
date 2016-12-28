@@ -91,6 +91,8 @@ search_emoji <- function(str, type='aliases', approximate=FALSE) {
 ##' @param replace Should sampling be with replacement?
 ##' @return random emoji
 ##' @export
+##' @examples
+##' sample_emoji(3)
 ##' @author guangchuang yu
 sample_emoji <- function(size, replace=FALSE) {
     sample(unlist(emoji_data$aliases), size, replace)
@@ -112,7 +114,9 @@ mapper_ <- function(aliases, font_data) {
 ##' @param aliases aliases
 ##' @return unicode
 ##' @export
-##' @author ygc
+##' @examples
+##' emoji('love_letter')
+##' @author guangchuang yu
 emoji <- function(aliases) {
     mapper_(aliases, emoji_data)
 }

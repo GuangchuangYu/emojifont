@@ -15,7 +15,10 @@ unicode
 \description{
 convert emoji aliases to unicode
 }
+\examples{
+emoji('love_letter')
+}
 \author{
-ygc
+guangchuang yu
 }
 

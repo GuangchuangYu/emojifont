@@ -1,15 +1,15 @@
 Package: emojifont
 Type: Package
-Title: Emoji Fonts for using in R
-Version: 0.3.6
+Title: Emoji and Font Awesome in Graphics
+Version: 0.3.7
 Authors@R: c(person(given = "Guangchuang", family = "Yu",
 	   	    email = "guangchuangyu@gmail.com",
 		    role  = c("aut", "cre"))
 	    )
 Maintainer: Guangchuang Yu <guangchuangyu@gmail.com>
-Description: An implementation of using emoji font in both base and 'ggplot2' graphics.
+Description: An implementation of using emoji and fontawesome for using in both base and 'ggplot2' graphics.
 Depends:
-    R (>= 3.2.2)
+    R (>= 3.3.0)
 Imports:
     proto,
     showtext,
@@ -22,7 +22,7 @@ Suggests:
     knitr
 VignetteBuilder: knitr
 License: Artistic-2.0
-URL: https://github.com/GuangchuangYu/emojifont
+URL: https://guangchuangyu.github.io/emojifont
 BugReports: https://github.com/GuangchuangYu/emojifont/issues
 Packaged: 2011-12-28 08:16:14 UTC; root
 RoxygenNote: 5.0.1

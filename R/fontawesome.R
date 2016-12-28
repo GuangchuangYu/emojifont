@@ -1,6 +1,6 @@
 ##' search fontawesome
 ##'
-##' 
+##'
 ##' @title search_fontawesome
 ##' @param str string text
 ##' @param approximate logical
@@ -11,13 +11,31 @@ search_fontawesome <- function(str, approximate=FALSE) {
     efproto$search(str=str, type='aliases', approximate=approximate, font_data=fontawesome_data)
 }
 
+
+##' random fontawesome
+##'
+##'
+##' @title sample_fontawesome
+##' @param size a non-negative integer giving the number of items to choose
+##' @param replace Should sampling be with replacement?
+##' @return random fontawesome
+##' @export
+##' @examples
+##' sample_fontawesome(3)
+##' @author guangchuang yu
+sample_fontawesome <- function(size, replace=FALSE) {
+    sample(unlist(fontawesome_data$aliases), size, replace)
+}
+
 ##' convert fontawesome aliases to text
 ##'
-##' 
+##'
 ##' @title fontawesome
 ##' @param aliases aliases
 ##' @return text
 ##' @export
+##' @examples
+##' fontawesome('fa-twitter')
 ##' @author ygc
 fontawesome <- function(aliases) {
     mapper_(aliases, fontawesome_data)
@@ -25,7 +43,7 @@ fontawesome <- function(aliases) {
 
 ##' load fontawesome
 ##'
-##' 
+##'
 ##' @title load.fontawesome
 ##' @param font font
 ##' @return NULL

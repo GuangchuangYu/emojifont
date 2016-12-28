@@ -1,7 +1,7 @@
 emojifont: Emoji Fonts for using in R
 ---------
 
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/emojifont?color=green)](http://cran.r-project.org/package=emojifont)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/emojifont?color=green)](https://cran.r-project.org/package=emojifont)
 ![](http://cranlogs.r-pkg.org/badges/grand-total/emojifont?color=green)
 ![](http://cranlogs.r-pkg.org/badges/emojifont?color=green)
 ![](http://cranlogs.r-pkg.org/badges/last-week/emojifont?color=green)
@@ -15,7 +15,7 @@ An implementation of using emoji font in both base and 'ggplot2' graphics.
 
 Guangchuang YU <http://guangchuangyu.github.io>
 
-School of Public Health, The University of Hong Kong 
+School of Public Health, The University of Hong Kong
 
 ## Installation ##
 
