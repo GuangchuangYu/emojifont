@@ -39,6 +39,7 @@ mkdocs: mdfiles
 	rm -rf fonts;\
 	rm -rf css/font-awesome*
 
+
 mdfiles:
 	cd mkdocs;\
 	Rscript -e 'library(ypages); gendoc("src/index.md", "blue", "docs/index.md")';\
