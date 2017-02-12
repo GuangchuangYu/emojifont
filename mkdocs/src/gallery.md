@@ -35,12 +35,15 @@
 
 ## <i class="fa fa-wordpress"></i> Blog posts
 
++ <http://www.masalmon.eu/2017/01/27/catan/>
+
+![](https://github.com/masalmon/masalmon.github.io/blob/master/public/catan.gif?raw=true)
+
 + <https://guangchuangyu.github.io/2016/03/font-awesome-supported-in-emojifont/>
 
 ![](http://guangchuangyu.github.io/blog_images/2016/douban_emoji.jpg)
 
 ![](https://raw.githubusercontent.com/GuangchuangYu/emojifont/master/vignettes/figures/fontawesome.png)
-
 
 + <https://www.karada-good.net/analyticsr/r-484/>
 
