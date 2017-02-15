@@ -1,3 +1,8 @@
+CHANGES IN VERSION 0.4.0
+------------------------
+ o update fontawesome to v4.7.0 <2017-12-15, Wed>
+ o geom_emoji & geom_fontawesome <2017-12-15, Wed>
+
 CHANGES IN VERSION 0.3.7
 ------------------------
  o add examples and sample_fontawesome function <2016-12-28, Wed>
