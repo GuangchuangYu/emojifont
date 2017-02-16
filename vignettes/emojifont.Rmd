@@ -75,16 +75,19 @@ emoji(search_emoji('smile'))
 
 # Emoji in R plot
 
+<!--
+
 To support using emoji in R plot, we need to load `emoji` font and then use `family` parameter to specify using the font.
 
 ## load Emoji font
-```{r}
+#```{r}
 ## list available emoji fonts
 list.emojifonts()
 
 ## load selected emoji font
 load.emojifont('OpenSansEmoji.ttf')
-```
+#```
+-->
 
 
 ## base plot
@@ -176,8 +179,6 @@ The `emojifont` package was initially designed for using emoji font. I found tha
 The usage is quite similar as using emoji.
 
 ```{r fig.showtext=TRUE}
-load.fontawesome()
-
 set.seed(2016-03-09)
 fa <- fontawesome(c('fa-github', 'fa-weibo', 'fa-twitter', 'fa-android', 'fa-coffee'))
 d <- data.frame(x=rnorm(20),

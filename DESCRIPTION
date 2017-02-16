@@ -1,7 +1,7 @@
 Package: emojifont
 Type: Package
 Title: Emoji and Font Awesome in Graphics
-Version: 0.4.0
+Version: 0.4.1
 Authors@R: c(person(given = "Guangchuang", family = "Yu",
 	   	    email = "guangchuangyu@gmail.com",
 		    role  = c("aut", "cre"))
