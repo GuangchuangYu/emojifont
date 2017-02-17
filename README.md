@@ -38,6 +38,7 @@ In addition to emoji font, I also packed other iconic fonts into this package.
 
 Currently, this package support Emoji Font and Font Awesome.
 
++ `EmojiOne.ttf` is downloaded from <https://github.com/eosrei/emojione-color-font>
 + `OpenSansEmoji.ttf` is downloaded from <https://github.com/MorbZ/OpenSansEmoji>
 + `fontawesome-webfont.ttf` is downloaded from <https://github.com/FortAwesome/Font-Awesome>.
 

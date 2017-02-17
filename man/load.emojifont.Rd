@@ -4,7 +4,7 @@
 \alias{load.emojifont}
 \title{load.emojifont}
 \usage{
-load.emojifont(font = "OpenSansEmoji.ttf")
+load.emojifont(font = "EmojiOne.ttf")
 }
 \arguments{
 \item{font}{one of output from list.emojifonts}

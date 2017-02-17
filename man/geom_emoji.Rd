@@ -5,7 +5,7 @@
 \title{geom_emoji}
 \usage{
 geom_emoji(alias = "rose", color = "#67001f", size = 120, x = 1,
-  y = 1, ...)
+  y = 1, vjust = 0.25, ...)
 }
 \arguments{
 \item{alias}{emoji alias}
@@ -17,6 +17,8 @@ geom_emoji(alias = "rose", color = "#67001f", size = 120, x = 1,
 \item{x}{x position}
 
 \item{y}{y position}
+
+\item{vjust}{vertical adjustment}
 
 \item{...}{additional parameter for geom_text}
 }

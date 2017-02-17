@@ -129,7 +129,7 @@ emoji <- function(aliases) {
 ##' @return NULL
 ##' @export
 ##' @author ygc
-load.emojifont <- function(font = "OpenSansEmoji.ttf") {
+load.emojifont <- function(font = "EmojiOne.ttf") {
     efproto$load_font(font=font)
 }
 
