@@ -19,7 +19,8 @@ Imports:
 Suggests:
     colorspace,
     ggtree,
-    knitr
+    knitr,
+    prettydoc
 VignetteBuilder: knitr
 License: Artistic-2.0
 URL: https://guangchuangyu.github.io/emojifont

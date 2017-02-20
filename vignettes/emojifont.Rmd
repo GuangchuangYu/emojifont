@@ -2,13 +2,15 @@
 title: "An Introduction to emojifont package"
 author: "\\
 
-	Guangchuang Yu (<guangchuangyu@gmail.com>)\\
+	Guangchuang Yu\\
 
         School of Public Health, The University of Hong Kong"
 date: "`r Sys.Date()`"
 output:
-  html_document:
+  prettydoc::html_pretty:
     toc: true
+    theme: cayman
+    highlight: github
   pdf_document:
     toc: true
 vignette: >
