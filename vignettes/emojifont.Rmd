@@ -36,13 +36,6 @@ library("colorspace")
 
 # emojifont: using emoji font in `R`
 
-[emoGG](https://github.com/dill/emoGG/) is a good attemp to add `emoji` in `ggplot2`. It render `emoji` picture (png) and creat a layer, `geom_emoji`, to add emoji.
-
-In my opinion, `emoji` should be treated as ordinary font in user interface, albeit it maynot be true internally.
-
-
-It would be more flexible if we can use emoji as ordinary font and in this way user don't need to learn extra stuff.
-
 
 The `emojifont` package is designed to bring `emoji` font to R users and is created for users that are impatient and relutant to learn.
 
@@ -126,52 +119,6 @@ y = sin(x)
 ggplot() + geom_emoji('heartbeat', x=x, y=y, size=10)
 ```
 
-
-
-## ggtree
-
-```{r fig.showtext=TRUE}
-library("ggtree")
-library("colorspace")
-
-tree_text=paste0(
-    "(","(","(",
-       "(",
-            "(",
-               emoji("cow"), ",",
-               "(",
-                  emoji("whale"),",",
-                  emoji("dolphin"),
-               ")",
-            "),",
-            "(",
-               emoji('pig2'),",",
-               emoji('boar'),
-            ")",
-       "),",
-       emoji("camel"),
-    "),", emoji("fish"), "),",
-emoji("seedling"), ");")
-
-ggtree(read.tree(text=tree_text)) + xlim(NA, 7) +
-    geom_tiplab(family="EmojiOne", size=10,
-                color=rainbow_hcl(8), vjust=.25)
-```
-
-# Apple Color Emoji
-
-Although `R`'s graphical devices don't support `AppleColorEmoji` font, it's still possible to use it. We can export the `plot` to `svg` file and render it in `Safari`.
-
-```r
-library(gridSVG)
-p <-  ggtree(read.tree(text=tree_text), size=2) + geom_tiplab(size=20)
-p <- p %>% phylopic("79ad5f09-cf21-4c89-8e7d-0c82a00ce728", color="firebrick", alpha = .3)
-p <- p + xlim(NA, 7) + ylim(NA, 8.5)
-p
-ps = grid.export("emoji.svg", addClass=T)
-```
-
-![](figures/apple_emoji2.png)
 
 # Font Awesome
 
