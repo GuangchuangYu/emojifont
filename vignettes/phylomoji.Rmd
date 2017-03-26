@@ -6,6 +6,7 @@ author: "\\
 
         School of Public Health, The University of Hong Kong"
 date: "`r Sys.Date()`"
+bibliography: emojifont.bib
 output:
   prettydoc::html_pretty:
     toc: true
@@ -37,6 +38,10 @@ library("colorspace")
 
 # Phylomoji
 
+With ggtree[@yu_ggtree_2017], it is very easy to create phylomoji. Emoji is internally supported by ggtree.
+
+## Use emoji in taxa labels
+
 ```{r fig.showtext=TRUE}
 library(ggtree)
 tree_text <- "(((((cow, (whale, dolphin)), (pig2, boar)), camel), fish), seedling);"
@@ -62,7 +67,7 @@ open_tree(p, angle=60) %>% rotate_tree(-75)
 ```
 
 
-# Annotate phylogenetic tree with emojifont
+## Labeling clades using emoji
 
 ```{r fig.showtext=TRUE}
 set.seed(123)
@@ -77,7 +82,7 @@ ggtree(tr) + xlim(NA, 5) +
 ```
 
 
-# Apple Color Emoji
+## Apple Color Emoji
 
 Although `R`'s graphical devices don't support `AppleColorEmoji` font, it's still possible to use it. We can export the `plot` to `svg` file and render it in `Safari`.
 
@@ -95,4 +100,10 @@ ps = grid.export("emoji.svg", addClass=T)
 
 ![](figures/apple_emoji2.png)
 
+## Further reading
+
+Please visit ggtree homepage, <https://guangchuangyu.github.io/ggtree>, to find out more.
+
+
+# References
 
