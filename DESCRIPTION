@@ -7,7 +7,8 @@ Authors@R: c(person(given = "Guangchuang", family = "Yu",
 		    role  = c("aut", "cre"))
 	    )
 Maintainer: Guangchuang Yu <guangchuangyu@gmail.com>
-Description: An implementation of using emoji and fontawesome for using in both base and 'ggplot2' graphics.
+Description: An implementation of using emoji and fontawesome for using in both
+    base and 'ggplot2' graphics.
 Depends:
     R (>= 3.3.0)
 Imports:
@@ -26,4 +27,4 @@ License: Artistic-2.0
 URL: https://guangchuangyu.github.io/emojifont
 BugReports: https://github.com/GuangchuangYu/emojifont/issues
 Packaged: 2011-12-28 08:16:14 UTC; root
-RoxygenNote: 6.0.1
+RoxygenNote: 5.0.1
