@@ -1,5 +1,5 @@
 ---
-title: "Phylomoji by ggtree and emojifont"
+title: "Phylomoji with ggtree and emojifont"
 author: "\\
 
 	Guangchuang Yu\\
@@ -38,7 +38,7 @@ library("colorspace")
 
 # Phylomoji
 
-With ggtree[@yu_ggtree_2017], it is very easy to create phylomoji. Emoji is internally supported by ggtree.
+With ggtree [@yu_ggtree_2017], it is very easy to create phylomoji. Emoji is internally supported by ggtree.
 
 ## Use emoji in taxa labels
 
@@ -99,6 +99,7 @@ ps = grid.export("emoji.svg", addClass=T)
 ```
 
 ![](figures/apple_emoji2.png)
+
 
 ## Further reading
 
