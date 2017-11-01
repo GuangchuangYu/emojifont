@@ -23,4 +23,3 @@ sample_fontawesome(3)
 \author{
 guangchuang yu
 }
-

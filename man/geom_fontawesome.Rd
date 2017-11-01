@@ -29,4 +29,3 @@ wrapper layer for visualizing fontawesome
 \author{
 guangchuang yu
 }
-
