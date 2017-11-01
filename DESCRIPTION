@@ -4,7 +4,10 @@ Title: Emoji and Font Awesome in Graphics
 Version: 0.5.0
 Authors@R: c(person(given = "Guangchuang", family = "Yu",
 	   	    email = "guangchuangyu@gmail.com",
-		    role  = c("aut", "cre"))
+		    role  = c("aut", "cre")),
+            person(given = "Claus Thorn", family = "Ekstrøm",
+                    email = "ekstrom@sund.ku.dk",
+                    role  = c("ctb"))
 	    )
 Maintainer: Guangchuang Yu <guangchuangyu@gmail.com>
 Description: An implementation of using emoji and fontawesome for using in both
@@ -24,6 +27,7 @@ Suggests:
     prettydoc
 VignetteBuilder: knitr
 License: Artistic-2.0
+Encoding: UTF-8
 URL: https://guangchuangyu.github.io/emojifont
 BugReports: https://github.com/GuangchuangYu/emojifont/issues
 Packaged: 2011-12-28 08:16:14 UTC; root
