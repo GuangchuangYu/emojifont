@@ -15,4 +15,3 @@ load fontawesome
 \author{
 ygc
 }
-

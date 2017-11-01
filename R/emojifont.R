@@ -1,5 +1,5 @@
-##' @importFrom sysfonts font.add
-##' @importFrom showtext showtext.auto
+##' @importFrom sysfonts font_add
+##' @importFrom showtext showtext_auto
 ##' @importFrom proto proto
 efproto <- proto(expr={
     get_path <- function(., type='emoji') {
@@ -22,8 +22,8 @@ efproto <- proto(expr={
             stop("font doesn't exist...")
         }
 
-        font.add(sub("\\..*", "", font), font)
-        showtext.auto()
+        font_add(sub("\\..*", "", font), font)
+        showtext_auto()
         setwd(wd)
     }
     search <- function(., str, type, approximate=FALSE, font_data=emoji_data) {

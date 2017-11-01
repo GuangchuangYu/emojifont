@@ -21,4 +21,3 @@ emoji('love_letter')
 \author{
 guangchuang yu
 }
-

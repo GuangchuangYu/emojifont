@@ -15,4 +15,3 @@ load emoji font
 \author{
 ygc
 }
-

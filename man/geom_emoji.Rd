@@ -31,4 +31,3 @@ wrapper layer for visualizing emoji
 \author{
 guangchuang yu
 }
-
