@@ -1,108 +1,108 @@
 {
     "docs": [
         {
-            "location": "/",
-            "text": "emojifont\n is an implementation of using emoji font in both base and\n'ggplot2' graphics. \nemojifont\n is released on\n\nCRAN\n and the source\ncode is hosted on \n GitHub\n.\n\n\n Author\n\n\nGuangchuang Yu, School of Public Health, The University of Hong Kong.\n\n\n Installation\n\n\nTo install \nemojifont\n, start R and enter:\n\n\ninstall.packages(\"emojifont\")\n\n\n\n\n Examples\n\n\n base plot\n\n\nrequire(remoji)\nset.seed(123)\nx <- rnorm(10)\nset.seed(321)\ny <- rnorm(10)\nplot(x, y, cex=0)\ntext(x, y, labels=emoji('cow'), cex=1.5, col='steelblue', family='OpenSansEmoji')\n\n\n\n\n\n\n ggplot2\n\n\ndd=data.frame(x=emoji(c(\"satisfied\", \"disapointed\")), y=c(50, 10))\nemoji_text=element_text(family=\"OpenSansEmoji\", size=20)\nggplot(dd, aes(x, y)) + geom_bar(stat='identity', aes(fill=x)) +\n     ggtitle(paste(emoji(c(\"+1\", \"-1\")), collapse=\" \"))+\n     theme(axis.text.x = emoji_text, legend.text=emoji_text, title=emoji_text) +\n     xlab(NULL)+ylab(NULL)\n\n\n\n\n\n\n ggtree\n\n\nrequire(ggtree)\nrequire(colorspace)\n\ntree_text=paste0(\n    \"(\",\"(\",\"(\",\n       \"(\",\n            \"(\",\n               emoji(\"cow\"), \",\",\n               \"(\",\n                  emoji(\"whale\"),\",\",\n                  emoji(\"dolphin\"),\n               \")\",\n            \"),\",\n            \"(\",\n               emoji('pig2'),\",\",\n               emoji('boar'),\n            \")\",\n       \"),\",\n       emoji(\"camel\"),\n    \"),\", emoji(\"fish\"), \"),\",\nemoji(\"seedling\"), \");\")\n\nggtree(read.tree(text=tree_text)) + xlim(NA, 7) +\n   geom_tiplab(family=\"OpenSansEmoji\", size=10,\n               color=rainbow_hcl(8))\n\n\n\n\n\n\nFound out more on \nhttps://cran.r-project.org/web/packages/emojifont/vignettes/emojifont.html\n.\n\n\n\n\n\n\n\n(function() {\n    // Don't ever inject Disqus on localhost--it creates unwanted\n    // discussions from 'localhost:1313' on your Disqus account...\n    // if (window.location.hostname == \"localhost\")\n    //     return;\n\n    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;\n    var disqus_shortname = 'gcyu';\n    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';\n    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);\n})();\n\n\n\n\nPlease enable JavaScript to view the \ncomments powered by Disqus.\n\n\n\ncomments powered by \nDisqus",
+            "location": "/", 
+            "text": "emojifont\n is an implementation of using emoji font in both base and\n'ggplot2' graphics. \nemojifont\n is released on\n\nCRAN\n and the source\ncode is hosted on \n GitHub\n.\n\n\n Author\n\n\nGuangchuang Yu, School of Public Health, The University of Hong Kong.\n\n\n Installation\n\n\nTo install \nemojifont\n, start R and enter:\n\n\ninstall.packages(\nemojifont\n)\n\n\n\n\n Examples\n\n\n base plot\n\n\nrequire(remoji)\nset.seed(123)\nx \n- rnorm(10)\nset.seed(321)\ny \n- rnorm(10)\nplot(x, y, cex=0)\ntext(x, y, labels=emoji('cow'), cex=1.5, col='steelblue', family='OpenSansEmoji')\n\n\n\n\n\n\n ggplot2\n\n\ndd=data.frame(x=emoji(c(\nsatisfied\n, \ndisapointed\n)), y=c(50, 10))\nemoji_text=element_text(family=\nOpenSansEmoji\n, size=20)\nggplot(dd, aes(x, y)) + geom_bar(stat='identity', aes(fill=x)) +\n     ggtitle(paste(emoji(c(\n+1\n, \n-1\n)), collapse=\n \n))+\n     theme(axis.text.x = emoji_text, legend.text=emoji_text, title=emoji_text) +\n     xlab(NULL)+ylab(NULL)\n\n\n\n\n\n\n ggtree\n\n\nrequire(ggtree)\nrequire(colorspace)\n\ntree_text=paste0(\n    \n(\n,\n(\n,\n(\n,\n       \n(\n,\n            \n(\n,\n               emoji(\ncow\n), \n,\n,\n               \n(\n,\n                  emoji(\nwhale\n),\n,\n,\n                  emoji(\ndolphin\n),\n               \n)\n,\n            \n),\n,\n            \n(\n,\n               emoji('pig2'),\n,\n,\n               emoji('boar'),\n            \n)\n,\n       \n),\n,\n       emoji(\ncamel\n),\n    \n),\n, emoji(\nfish\n), \n),\n,\nemoji(\nseedling\n), \n);\n)\n\nggtree(read.tree(text=tree_text)) + xlim(NA, 7) +\n   geom_tiplab(family=\nOpenSansEmoji\n, size=10,\n               color=rainbow_hcl(8))\n\n\n\n\n\n\nFound out more on \nhttps://cran.r-project.org/web/packages/emojifont/vignettes/emojifont.html\n.\n\n\n\n\n\n\n\n(function() {\n    // Don't ever inject Disqus on localhost--it creates unwanted\n    // discussions from 'localhost:1313' on your Disqus account...\n    // if (window.location.hostname == \"localhost\")\n    //     return;\n\n    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;\n    var disqus_shortname = 'gcyu';\n    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';\n    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);\n})();\n\n\n\n\nPlease enable JavaScript to view the \ncomments powered by Disqus.\n\n\n\ncomments powered by \nDisqus", 
             "title": "Home"
-        },
+        }, 
         {
-            "location": "/#author",
-            "text": "Guangchuang Yu, School of Public Health, The University of Hong Kong.",
+            "location": "/#author", 
+            "text": "Guangchuang Yu, School of Public Health, The University of Hong Kong.", 
             "title": " Author"
-        },
+        }, 
         {
-            "location": "/#installation",
-            "text": "To install  emojifont , start R and enter:  install.packages(\"emojifont\")",
+            "location": "/#installation", 
+            "text": "To install  emojifont , start R and enter:  install.packages( emojifont )", 
             "title": " Installation"
-        },
+        }, 
         {
-            "location": "/#examples",
-            "text": "",
+            "location": "/#examples", 
+            "text": "", 
             "title": " Examples"
-        },
+        }, 
         {
-            "location": "/#base-plot",
-            "text": "require(remoji)\nset.seed(123)\nx <- rnorm(10)\nset.seed(321)\ny <- rnorm(10)\nplot(x, y, cex=0)\ntext(x, y, labels=emoji('cow'), cex=1.5, col='steelblue', family='OpenSansEmoji')",
+            "location": "/#base-plot", 
+            "text": "require(remoji)\nset.seed(123)\nx  - rnorm(10)\nset.seed(321)\ny  - rnorm(10)\nplot(x, y, cex=0)\ntext(x, y, labels=emoji('cow'), cex=1.5, col='steelblue', family='OpenSansEmoji')", 
             "title": " base plot"
-        },
+        }, 
         {
-            "location": "/#ggplot2",
-            "text": "dd=data.frame(x=emoji(c(\"satisfied\", \"disapointed\")), y=c(50, 10))\nemoji_text=element_text(family=\"OpenSansEmoji\", size=20)\nggplot(dd, aes(x, y)) + geom_bar(stat='identity', aes(fill=x)) +\n     ggtitle(paste(emoji(c(\"+1\", \"-1\")), collapse=\" \"))+\n     theme(axis.text.x = emoji_text, legend.text=emoji_text, title=emoji_text) +\n     xlab(NULL)+ylab(NULL)",
+            "location": "/#ggplot2", 
+            "text": "dd=data.frame(x=emoji(c( satisfied ,  disapointed )), y=c(50, 10))\nemoji_text=element_text(family= OpenSansEmoji , size=20)\nggplot(dd, aes(x, y)) + geom_bar(stat='identity', aes(fill=x)) +\n     ggtitle(paste(emoji(c( +1 ,  -1 )), collapse=   ))+\n     theme(axis.text.x = emoji_text, legend.text=emoji_text, title=emoji_text) +\n     xlab(NULL)+ylab(NULL)", 
             "title": " ggplot2"
-        },
+        }, 
         {
-            "location": "/#ggtree",
-            "text": "require(ggtree)\nrequire(colorspace)\n\ntree_text=paste0(\n    \"(\",\"(\",\"(\",\n       \"(\",\n            \"(\",\n               emoji(\"cow\"), \",\",\n               \"(\",\n                  emoji(\"whale\"),\",\",\n                  emoji(\"dolphin\"),\n               \")\",\n            \"),\",\n            \"(\",\n               emoji('pig2'),\",\",\n               emoji('boar'),\n            \")\",\n       \"),\",\n       emoji(\"camel\"),\n    \"),\", emoji(\"fish\"), \"),\",\nemoji(\"seedling\"), \");\")\n\nggtree(read.tree(text=tree_text)) + xlim(NA, 7) +\n   geom_tiplab(family=\"OpenSansEmoji\", size=10,\n               color=rainbow_hcl(8))   Found out more on  https://cran.r-project.org/web/packages/emojifont/vignettes/emojifont.html .   \n\n(function() {\n    // Don't ever inject Disqus on localhost--it creates unwanted\n    // discussions from 'localhost:1313' on your Disqus account...\n    // if (window.location.hostname == \"localhost\")\n    //     return;\n\n    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;\n    var disqus_shortname = 'gcyu';\n    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';\n    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);\n})();  Please enable JavaScript to view the  comments powered by Disqus.  comments powered by  Disqus",
+            "location": "/#ggtree", 
+            "text": "require(ggtree)\nrequire(colorspace)\n\ntree_text=paste0(\n     ( , ( , ( ,\n        ( ,\n             ( ,\n               emoji( cow ),  , ,\n                ( ,\n                  emoji( whale ), , ,\n                  emoji( dolphin ),\n                ) ,\n             ), ,\n             ( ,\n               emoji('pig2'), , ,\n               emoji('boar'),\n             ) ,\n        ), ,\n       emoji( camel ),\n     ), , emoji( fish ),  ), ,\nemoji( seedling ),  ); )\n\nggtree(read.tree(text=tree_text)) + xlim(NA, 7) +\n   geom_tiplab(family= OpenSansEmoji , size=10,\n               color=rainbow_hcl(8))   Found out more on  https://cran.r-project.org/web/packages/emojifont/vignettes/emojifont.html .   \n\n(function() {\n    // Don't ever inject Disqus on localhost--it creates unwanted\n    // discussions from 'localhost:1313' on your Disqus account...\n    // if (window.location.hostname == \"localhost\")\n    //     return;\n\n    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;\n    var disqus_shortname = 'gcyu';\n    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';\n    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);\n})();  Please enable JavaScript to view the  comments powered by Disqus.  comments powered by  Disqus", 
             "title": " ggtree"
-        },
+        }, 
         {
-            "location": "/emojifontR/",
-            "text": "",
+            "location": "/emojifontR/", 
+            "text": "", 
             "title": "use emoji font in R"
-        },
+        }, 
         {
-            "location": "/fontawesome/",
-            "text": "",
+            "location": "/fontawesome/", 
+            "text": "", 
             "title": "font awesome supported in emojifont"
-        },
+        }, 
         {
-            "location": "/gallery/",
-            "text": "Tweets\n\n\nDistribution of Chinese zodiac signs at the family holiday party. \nhttps://t.co/oSMyX4dome\n \n@guangchuangyu\n \npic.twitter.com/Ac6V1kuRjZ\n\u2014 Joseph Stachelek (@jjstache) \nDecember 26, 2016\n\n\n\n@drob\n \n@timelyportfolio\n back in March I celebrated my PhD thesis submission with gganimate \npic.twitter.com/OVNDgTC2i4\n\u2014 Ma\u00eblle Salmon (@ma_salmon) \nNovember 18, 2016\n\n\n\n16/04/25 \u516c\u958b\nR\u3067\u304a\u904a\u3073\uff1a\u7d75\u6587\u5b57\u3092\u30d7\u30ed\u30c3\u30c8\u300cemojifont\u300d\u30d1\u30c3\u30b1\u30fc\u30b8 \nhttps://t.co/D2ClyMQMxX\n\u2014 \u304b\u3089\u3060\u306b\u3044\u3044\u3082\u306e (@KaradaGood) \nApril 24, 2016\n\n\n\nhow about using emoji to label host species in phylogenetic tree? \n#rstats\n \n#visualization\n \n#ggtree\n \n#emojifont\n \npic.twitter.com/MRKQvNNAUh\n\u2014 Guangchuang Yu (@guangchuangyu) \nMarch 11, 2016\n\n\n\n@drob\n and \n@guangchuangyu\n, this is data surfing (air quality data from Lima, Peru) / fun with your cool pkgs. Thx! \npic.twitter.com/ikinjxDDZL\n\u2014 Ma\u00eblle Salmon (@ma_salmon) \nMarch 6, 2016\n\n\n\neasy to produce embed subplot using subview function, \nhttp://t.co/pF5qslthcj\n \n#ggtree\n \n#rstats\n \n#ggplot2\n \npic.twitter.com/jMnB0NeS5Z\n\u2014 Guangchuang Yu (@guangchuangyu) \nSeptember 1, 2015\n\n\n\n\n\n\n Blog posts\n\n\n\n\nhttp://www.masalmon.eu/2017/01/27/catan/\n\n\n\n\n\n\n\n\nhttps://guangchuangyu.github.io/2016/03/font-awesome-supported-in-emojifont/\n\n\n\n\n\n\n\n\n\n\nhttps://www.karada-good.net/analyticsr/r-484/",
+            "location": "/gallery/", 
+            "text": "Tweets\n\n\nDistribution of Chinese zodiac signs at the family holiday party. \nhttps://t.co/oSMyX4dome\n \n@guangchuangyu\n \npic.twitter.com/Ac6V1kuRjZ\n Joseph Stachelek (@jjstache) \nDecember 26, 2016\n\n\n\n@drob\n \n@timelyportfolio\n back in March I celebrated my PhD thesis submission with gganimate \npic.twitter.com/OVNDgTC2i4\n Ma\u00eblle Salmon (@ma_salmon) \nNovember 18, 2016\n\n\n\n16/04/25 \u516c\u958b\nR\u3067\u304a\u904a\u3073\uff1a\u7d75\u6587\u5b57\u3092\u30d7\u30ed\u30c3\u30c8\u300cemojifont\u300d\u30d1\u30c3\u30b1\u30fc\u30b8 \nhttps://t.co/D2ClyMQMxX\n \u304b\u3089\u3060\u306b\u3044\u3044\u3082\u306e (@KaradaGood) \nApril 24, 2016\n\n\n\nhow about using emoji to label host species in phylogenetic tree? \n#rstats\n \n#visualization\n \n#ggtree\n \n#emojifont\n \npic.twitter.com/MRKQvNNAUh\n Guangchuang Yu (@guangchuangyu) \nMarch 11, 2016\n\n\n\n@drob\n and \n@guangchuangyu\n, this is data surfing (air quality data from Lima, Peru) / fun with your cool pkgs. Thx! \npic.twitter.com/ikinjxDDZL\n Ma\u00eblle Salmon (@ma_salmon) \nMarch 6, 2016\n\n\n\neasy to produce embed subplot using subview function, \nhttp://t.co/pF5qslthcj\n \n#ggtree\n \n#rstats\n \n#ggplot2\n \npic.twitter.com/jMnB0NeS5Z\n Guangchuang Yu (@guangchuangyu) \nSeptember 1, 2015\n\n\n\n\n\n\n Blog posts\n\n\n\n\nhttp://www.masalmon.eu/2017/01/27/catan/\n\n\n\n\n\n\n\n\nhttps://guangchuangyu.github.io/2016/03/font-awesome-supported-in-emojifont/\n\n\n\n\n\n\n\n\n\n\nhttps://www.karada-good.net/analyticsr/r-484/", 
             "title": "Gallery"
-        },
+        }, 
         {
-            "location": "/gallery/#tweets",
-            "text": "Distribution of Chinese zodiac signs at the family holiday party.  https://t.co/oSMyX4dome   @guangchuangyu   pic.twitter.com/Ac6V1kuRjZ \u2014 Joseph Stachelek (@jjstache)  December 26, 2016  @drob   @timelyportfolio  back in March I celebrated my PhD thesis submission with gganimate  pic.twitter.com/OVNDgTC2i4 \u2014 Ma\u00eblle Salmon (@ma_salmon)  November 18, 2016  16/04/25 \u516c\u958b R\u3067\u304a\u904a\u3073\uff1a\u7d75\u6587\u5b57\u3092\u30d7\u30ed\u30c3\u30c8\u300cemojifont\u300d\u30d1\u30c3\u30b1\u30fc\u30b8  https://t.co/D2ClyMQMxX \u2014 \u304b\u3089\u3060\u306b\u3044\u3044\u3082\u306e (@KaradaGood)  April 24, 2016  how about using emoji to label host species in phylogenetic tree?  #rstats   #visualization   #ggtree   #emojifont   pic.twitter.com/MRKQvNNAUh \u2014 Guangchuang Yu (@guangchuangyu)  March 11, 2016  @drob  and  @guangchuangyu , this is data surfing (air quality data from Lima, Peru) / fun with your cool pkgs. Thx!  pic.twitter.com/ikinjxDDZL \u2014 Ma\u00eblle Salmon (@ma_salmon)  March 6, 2016  easy to produce embed subplot using subview function,  http://t.co/pF5qslthcj   #ggtree   #rstats   #ggplot2   pic.twitter.com/jMnB0NeS5Z \u2014 Guangchuang Yu (@guangchuangyu)  September 1, 2015",
+            "location": "/gallery/#tweets", 
+            "text": "Distribution of Chinese zodiac signs at the family holiday party.  https://t.co/oSMyX4dome   @guangchuangyu   pic.twitter.com/Ac6V1kuRjZ  Joseph Stachelek (@jjstache)  December 26, 2016  @drob   @timelyportfolio  back in March I celebrated my PhD thesis submission with gganimate  pic.twitter.com/OVNDgTC2i4  Ma\u00eblle Salmon (@ma_salmon)  November 18, 2016  16/04/25 \u516c\u958b R\u3067\u304a\u904a\u3073\uff1a\u7d75\u6587\u5b57\u3092\u30d7\u30ed\u30c3\u30c8\u300cemojifont\u300d\u30d1\u30c3\u30b1\u30fc\u30b8  https://t.co/D2ClyMQMxX  \u304b\u3089\u3060\u306b\u3044\u3044\u3082\u306e (@KaradaGood)  April 24, 2016  how about using emoji to label host species in phylogenetic tree?  #rstats   #visualization   #ggtree   #emojifont   pic.twitter.com/MRKQvNNAUh  Guangchuang Yu (@guangchuangyu)  March 11, 2016  @drob  and  @guangchuangyu , this is data surfing (air quality data from Lima, Peru) / fun with your cool pkgs. Thx!  pic.twitter.com/ikinjxDDZL  Ma\u00eblle Salmon (@ma_salmon)  March 6, 2016  easy to produce embed subplot using subview function,  http://t.co/pF5qslthcj   #ggtree   #rstats   #ggplot2   pic.twitter.com/jMnB0NeS5Z  Guangchuang Yu (@guangchuangyu)  September 1, 2015", 
             "title": " Tweets"
-        },
+        }, 
         {
-            "location": "/gallery/#blog-posts",
-            "text": "http://www.masalmon.eu/2017/01/27/catan/     https://guangchuangyu.github.io/2016/03/font-awesome-supported-in-emojifont/      https://www.karada-good.net/analyticsr/r-484/",
+            "location": "/gallery/#blog-posts", 
+            "text": "http://www.masalmon.eu/2017/01/27/catan/     https://guangchuangyu.github.io/2016/03/font-awesome-supported-in-emojifont/      https://www.karada-good.net/analyticsr/r-484/", 
             "title": " Blog posts"
-        },
+        }, 
         {
-            "location": "/ChIPseeker/",
-            "text": "",
+            "location": "/ChIPseeker/", 
+            "text": "", 
             "title": "ChIPseeker"
-        },
+        }, 
         {
-            "location": "/clusterProfiler/",
-            "text": "",
+            "location": "/clusterProfiler/", 
+            "text": "", 
             "title": "clusterProfiler"
-        },
+        }, 
         {
-            "location": "/DOSE/",
-            "text": "",
+            "location": "/DOSE/", 
+            "text": "", 
             "title": "DOSE"
-        },
+        }, 
         {
-            "location": "/emojifont/",
-            "text": "",
+            "location": "/emojifont/", 
+            "text": "", 
             "title": "emojifont"
-        },
+        }, 
         {
-            "location": "/ggtree/",
-            "text": "",
+            "location": "/ggtree/", 
+            "text": "", 
             "title": "ggtree"
-        },
+        }, 
         {
-            "location": "/GOSemSim/",
-            "text": "",
+            "location": "/GOSemSim/", 
+            "text": "", 
             "title": "GOSemSim"
-        },
+        }, 
         {
-            "location": "/meshes/",
-            "text": "",
+            "location": "/meshes/", 
+            "text": "", 
             "title": "meshes"
-        },
+        }, 
         {
-            "location": "/ReactomePA/",
-            "text": "",
+            "location": "/ReactomePA/", 
+            "text": "", 
             "title": "ReactomePA"
-        },
+        }, 
         {
-            "location": "/treeio/",
-            "text": "",
+            "location": "/treeio/", 
+            "text": "", 
             "title": "treeio"
         }
     ]
