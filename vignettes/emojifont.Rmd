@@ -17,7 +17,6 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteIndexEntry{emojifont introduction}
   %\VignetteDepends{ggplot2}
-  %\VignetteDepends{ggtree}
   %\VignetteDepends{colorspace}
   %\usepackage[utf8]{inputenc}
 ---
@@ -146,6 +145,14 @@ To make it easy to used with `ggplot2`, a corresponding
 ```{r fig.showtext=TRUE}
 ggplot() + geom_fontawesome("fa-github", color='black') + theme_void()
 ```
+
+
+# phylomoji
+
+
+Creating phylomoji is possible using `emojifont` and `ggtree`, please
+refer to the
+[Phylomoji](https://guangchuangyu.github.io/software/ggtree/vignettes/phylomoji.html) vignette.
 
 
 # Limitation

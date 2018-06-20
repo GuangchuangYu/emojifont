@@ -1,4 +1,4 @@
-# emojifont 0.5.1.001
+# emojifont 0.5.2
 
 + mv `phylomoji` vignette
   to <https://guangchuangyu.github.io/software/ggtree/vignettes/phylomoji.html>
