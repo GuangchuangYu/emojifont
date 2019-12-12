@@ -4,8 +4,14 @@
 \alias{geom_fontawesome}
 \title{geom_fontawesome}
 \usage{
-geom_fontawesome(alias = "fa-github", color = "#67001f", size = 120,
-  x = 1, y = 1, ...)
+geom_fontawesome(
+  alias = "fa-github",
+  color = "#67001f",
+  size = 120,
+  x = 1,
+  y = 1,
+  ...
+)
 }
 \arguments{
 \item{alias}{fontawesome alias}

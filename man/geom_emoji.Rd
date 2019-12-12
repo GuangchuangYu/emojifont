@@ -4,8 +4,15 @@
 \alias{geom_emoji}
 \title{geom_emoji}
 \usage{
-geom_emoji(alias = "rose", color = "#67001f", size = 120, x = 1,
-  y = 1, vjust = 0.25, ...)
+geom_emoji(
+  alias = "rose",
+  color = "#67001f",
+  size = 120,
+  x = 1,
+  y = 1,
+  vjust = 0.25,
+  ...
+)
 }
 \arguments{
 \item{alias}{emoji alias}

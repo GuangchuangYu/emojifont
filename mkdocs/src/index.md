@@ -57,35 +57,9 @@ ggplot(dd, aes(x, y)) + geom_bar(stat='identity', aes(fill=x)) +
 
 #### <i class="fa fa-angle-double-right"></i> ggtree
 
-```r
-require(ggtree)
-require(colorspace)
+Please refer to <https://yulab-smu.github.io/treedata-book/chapter8.html#phylomoji>.
 
-tree_text=paste0(
-    "(","(","(",
-       "(",
-            "(",
-               emoji("cow"), ",",
-               "(",
-                  emoji("whale"),",",
-                  emoji("dolphin"),
-               ")",
-            "),",
-            "(",
-               emoji('pig2'),",",
-               emoji('boar'),
-            ")",
-       "),",
-       emoji("camel"),
-    "),", emoji("fish"), "),",
-emoji("seedling"), ");")
 
-ggtree(read.tree(text=tree_text)) + xlim(NA, 7) +
-   geom_tiplab(family="OpenSansEmoji", size=10,
-               color=rainbow_hcl(8))
-```
-
-![](https://raw.githubusercontent.com/GuangchuangYu/emojifont/master/vignettes/figures/ggtree_emoji-1.png)
 
 Found out more on <https://cran.r-project.org/web/packages/emojifont/vignettes/emojifont.html>.
 
