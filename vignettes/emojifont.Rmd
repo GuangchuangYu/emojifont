@@ -150,7 +150,7 @@ ggplot() + geom_fontawesome("fa-github", color='black') + theme_void()
 
 
 Creating phylomoji is possible using `emojifont` and `ggtree`, please
-refer to the [Phylomoji](https://yulab-smu.github.io/treedata-book/chapter8.html#phylomoji) session in the [treedata book](https://yulab-smu.github.io/treedata-book/).
+refer to the [Phylomoji](https://yulab-smu.top/treedata-book/chapter8.html#phylomoji) session in the [treedata book](https://yulab-smu.top/treedata-book/).
 
 
 # Limitation

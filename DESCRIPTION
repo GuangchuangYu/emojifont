@@ -1,7 +1,7 @@
 Package: emojifont
 Type: Package
 Title: Emoji and Font Awesome in Graphics
-Version: 0.5.3
+Version: 0.5.4
 Authors@R: c(
     person(given = "Guangchuang", family = "Yu",      email = "guangchuangyu@gmail.com", role  = c("aut", "cre"), comment = c(ORCID = "0000-0002-6485-8781")),
     person(given = "Claus Thorn", family = "Ekstrøm", email = "ekstrom@sund.ku.dk",      role  = c("ctb"))
@@ -20,6 +20,7 @@ Imports:
 Suggests:
     colorspace,
     knitr,
+    rmarkdown,
     prettydoc
 VignetteBuilder: knitr
 License: Artistic-2.0
@@ -27,4 +28,4 @@ Encoding: UTF-8
 URL: https://guangchuangyu.github.io/emojifont
 BugReports: https://github.com/GuangchuangYu/emojifont/issues
 Packaged: 2011-12-28 08:16:14 UTC; root
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1
