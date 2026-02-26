@@ -11,12 +11,14 @@ emojifont: Emoji Fonts for using in R
 
 An implementation of using emoji font in both base and 'ggplot2' graphics.
 
+## :writing_hand: Authors
 
-## Authors ##
+Guangchuang YU
 
-Guangchuang YU <https://guangchuangyu.github.io>
+School of Basic Medical Sciences, Southern Medical University
 
-School of Public Health, The University of Hong Kong
+<https://yulab-smu.top>
+
 
 ## Installation ##
 

@@ -1,3 +1,6 @@
 Makefile
 mkdocs
 docs
+vignettes/*_files
+^CRAN-SUBMISSION$
+CRAN-SUBMISSION

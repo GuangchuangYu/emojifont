@@ -58,7 +58,8 @@ load.fontawesome <- function(font = "fontawesome-webfont.ttf") {
 get_fontawesome_data <- function() {
     ## copy font table from:
     ## https://fortawesome.github.io/Font-Awesome/cheatsheet/
-    y <- read.delim(pipe("pbpaste"), stringsAsFactors=F)
+    # y <- read.delim(pipe("pbpaste"), stringsAsFactors=F)
+    y <- yulab.utils::read.cb(read.delim, stringsAsFactors=FALSE)
     fa <- gsub("(.*)fa.*", '\\1', y[,1])
     html <- gsub(".*\\[(.*)\\].*",'\\1', y)
 

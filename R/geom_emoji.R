@@ -39,5 +39,5 @@ geom_fontawesome <- function(alias="fa-github", color="#67001f", size=120, x=1, 
 #' @importFrom rlang sym
 geom_emoji_ <- function(alias, color="#67001f", size=120, x=1, y=1, ..., .fun=emoji, family="EmojiOne") {
     data <- data.frame(x=x, y=y, label=.fun(alias))
-    geom_text(aes(!!sym("x"), !!sym("y"), label=label), data=data, family=family, color=color, size=size, ...)
+    geom_text(aes(!!sym("x"), !!sym("y"), label=!!sym("label")), data=data, family=family, color=color, size=size, ...)
 }

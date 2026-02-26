@@ -1,0 +1,163 @@
+---
+title: "An Introduction to emojifont package"
+author:
+  - name: Guangchuang Yu
+    email: guangchuangyu@gmail.com
+    affiliation: School of Public Health, The University of Hong Kong
+date: "`r Sys.Date()`"
+format:
+  html:
+    toc: true
+vignette: >
+  %\VignetteIndexEntry{emojifont introduction}
+  %\VignetteEngine{quarto::html}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteDepends{ggplot2}
+  %\VignetteDepends{knitr}
+  %\VignetteDepends{colorspace}
+---
+
+
+# emojifont: using emoji font in R
+
+The emojifont package is designed to bring emoji font to R users.
+It packs emoji fonts and uses showtext to render the fonts so they can be used in base plots or ggplot2.
+
+## Installation
+
+Get the released version from CRAN:
+
+```r
+install.packages("emojifont")
+```
+
+Or the development version from GitHub:
+
+```r
+## install.packages("devtools")
+devtools::install_github("GuangchuangYu/emojifont")
+```
+
+# Emoji characters
+
+To use emoji, we need to use their corresponding unicode. Emoji unicode can be found in
+<http://apps.timwhitlock.info/emoji/tables/unicode>, or searched using `search_emoji`.
+`search_emoji` returns emoji aliases which can be converted to unicode by `emoji`.
+
+```{r}
+library(emojifont)
+search_emoji("smile")
+emoji(search_emoji("smile"))
+```
+
+# Emoji in R plot
+
+## base plot
+
+```{r, fig.showtext=TRUE}
+set.seed(123)
+x <- rnorm(10)
+set.seed(321)
+y <- rnorm(10)
+plot(x, y, cex = 0)
+text(x, y, labels = emoji("cow"), cex = 1.5, col = "steelblue", family = "EmojiOne")
+```
+
+## ggplot2
+
+```{r, fig.showtext=TRUE}
+d <- data.frame(
+  x = x, y = y,
+  label = sample(c(emoji("cow"), emoji("camel")), 10, replace = TRUE),
+  type = sample(LETTERS[1:3], 10, replace = TRUE)
+)
+
+library(ggplot2)
+ggplot(d, aes(x, y, color = type, label = label)) +
+  geom_text(family = "EmojiOne", size = 6)
+```
+
+To make it easy to use with ggplot2, a simple layer `geom_emoji` is provided.
+
+```{r, fig.showtext=TRUE}
+ggplot() + geom_emoji("rose", color = "steelblue") + theme_void()
+x <- seq(0, 2 * pi, length = 30)
+y <- sin(x)
+ggplot() + geom_emoji("heartbeat", x = x, y = y, size = 10)
+```
+
+# Emoji in tables
+
+You can also use emoji within HTML tables by placing Unicode emoji into cells.
+Here we use `knitr::kable()` to render a simple table.
+
+```{r}
+library(emojifont)
+library(knitr)
+
+df <- data.frame(
+  name  = c("Cow", "Camel", "Heartbeat"),
+  emoji = emoji(c("cow", "camel", "heartbeat")),
+  stringsAsFactors = FALSE
+)
+
+kable(df, format = "html")
+```
+
+# Font Awesome
+
+The package also supports Font Awesome icons.
+
+```{r, fig.showtext=TRUE}
+set.seed(20160309)
+fa <- fontawesome(c("fa-github", "fa-weibo", "fa-twitter", "fa-android", "fa-coffee"))
+d <- data.frame(
+  x = rnorm(20),
+  y = rnorm(20),
+  label = sample(fa, 20, replace = TRUE)
+)
+
+ggplot(d, aes(x, y, color = label, label = label)) +
+  geom_text(family = "fontawesome-webfont", size = 6) +
+  xlab(NULL) + ylab(NULL) +
+  theme(legend.text = element_text(family = "fontawesome-webfont"))
+```
+
+A corresponding `geom_fontawesome` is also provided.
+
+```{r, fig.showtext=TRUE}
+ggplot() + geom_fontawesome("fa-github", color = "black") + theme_void()
+```
+
+# phylomoji
+
+Creating phylomoji is possible using `emojifont` and `ggtree`, please refer to:
+<https://yulab-smu.top/treedata-book/chapter8.html#phylomoji>.
+
+# Limitation
+
+RStudio uses a different graphics device handling and `showtext` may be incompatible with it.
+Since `emojifont` uses `showtext` as backend to parse emoji font, it may also be incompatible with RStudio.
+Consider manually opening a device (`X11()` in Linux, `quartz()` in macOS or `windows()` in Windows).
+
+# Note
+
+Currently, this package supports Emoji Font and Font Awesome.
+
+- `EmojiOne.ttf` is downloaded from <https://github.com/eosrei/emojione-color-font>
+- `OpenSansEmoji.ttf` is downloaded from <https://github.com/MorbZ/OpenSansEmoji>
+- `fontawesome-webfont.ttf` is downloaded from <https://github.com/FortAwesome/Font-Awesome>.
+
+Feel free to fork this package to add your favorite iconic fonts.
+
+# Bugs/Feature requests
+
+If you have any, let me know: <https://github.com/GuangchuangYu/emojifont/issues>.
+
+# Session info
+
+Here is the output of `sessionInfo()` on the system on which this document was compiled:
+
+```{r}
+sessionInfo()
+```
