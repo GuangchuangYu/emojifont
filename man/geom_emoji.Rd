@@ -21,7 +21,7 @@ geom_emoji(
 
 \item{size}{size}
 
-\item{x}{x position}
+\item{x}{x positionsym}
 
 \item{y}{y position}
 
