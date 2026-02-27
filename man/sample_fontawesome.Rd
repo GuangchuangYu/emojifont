@@ -21,5 +21,5 @@ random fontawesome
 sample_fontawesome(3)
 }
 \author{
-guangchuang yu
+Guangchuang Yu
 }

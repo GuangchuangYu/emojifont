@@ -19,5 +19,5 @@ convert emoji aliases to unicode
 emoji('love_letter')
 }
 \author{
-guangchuang yu
+Guangchuang Yu
 }

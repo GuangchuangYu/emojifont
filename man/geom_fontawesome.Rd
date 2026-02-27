@@ -33,5 +33,5 @@ ggplot2 layer
 wrapper layer for visualizing fontawesome
 }
 \author{
-guangchuang yu
+Guangchuang Yu
 }

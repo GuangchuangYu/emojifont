@@ -5,16 +5,18 @@ author:
     email: guangchuangyu@gmail.com
     affiliation: School of Public Health, The University of Hong Kong
 date: "`r Sys.Date()`"
-format:
-  html:
-    toc: true
+format: 
+    html:
+        theme: none
+        embed-resources: true
+        fontsize: 1.1em
+        linestretch: 1.7
 vignette: >
   %\VignetteIndexEntry{emojifont introduction}
   %\VignetteEngine{quarto::html}
   %\VignetteEncoding{UTF-8}
   %\VignetteDepends{ggplot2}
   %\VignetteDepends{knitr}
-  %\VignetteDepends{colorspace}
 ---
 
 
@@ -41,11 +43,24 @@ devtools::install_github("GuangchuangYu/emojifont")
 # Emoji characters
 
 To use emoji, we need to use their corresponding unicode. Emoji unicode can be found in
-<http://apps.timwhitlock.info/emoji/tables/unicode>, or searched using `search_emoji`.
+<https://apps.timwhitlock.info/emoji/tables/unicode>, or searched using `search_emoji`.
 `search_emoji` returns emoji aliases which can be converted to unicode by `emoji`.
 
 ```{r}
+#| echo: false
+
 library(emojifont)
+has_OpenMoji <- FALSE
+om_path <- system.file("emoji_fonts", package = "emojifont")
+if (nzchar(om_path) && file.exists(file.path(om_path, "OpenMoji.ttf"))) {
+  try(load.emojifont("OpenMoji.ttf"), silent = TRUE)
+  has_OpenMoji <- TRUE
+}
+
+has_fa_data <- TRUE
+```
+
+```{r}
 search_emoji("smile")
 emoji(search_emoji("smile"))
 ```
@@ -54,18 +69,18 @@ emoji(search_emoji("smile"))
 
 ## base plot
 
-```{r, fig.showtext=TRUE}
+```{r, fig.showtext=TRUE, eval=has_OpenMoji}
 set.seed(123)
 x <- rnorm(10)
 set.seed(321)
 y <- rnorm(10)
 plot(x, y, cex = 0)
-text(x, y, labels = emoji("cow"), cex = 1.5, col = "steelblue", family = "EmojiOne")
+text(x, y, labels = emoji("cow"), cex = 1.5, col = "steelblue", family = "OpenMoji")
 ```
 
 ## ggplot2
 
-```{r, fig.showtext=TRUE}
+```{r, fig.showtext=TRUE, eval=has_OpenMoji}
 d <- data.frame(
   x = x, y = y,
   label = sample(c(emoji("cow"), emoji("camel")), 10, replace = TRUE),
@@ -74,12 +89,12 @@ d <- data.frame(
 
 library(ggplot2)
 ggplot(d, aes(x, y, color = type, label = label)) +
-  geom_text(family = "EmojiOne", size = 6)
+  geom_text(family = "OpenMoji", size = 6)
 ```
 
 To make it easy to use with ggplot2, a simple layer `geom_emoji` is provided.
 
-```{r, fig.showtext=TRUE}
+```{r, fig.showtext=TRUE, eval=has_OpenMoji}
 ggplot() + geom_emoji("rose", color = "steelblue") + theme_void()
 x <- seq(0, 2 * pi, length = 30)
 y <- sin(x)
@@ -108,7 +123,8 @@ kable(df, format = "html")
 
 The package also supports Font Awesome icons.
 
-```{r, fig.showtext=TRUE}
+```{r, fig.showtext=TRUE, eval=has_fa_data}
+library(ggplot2)
 set.seed(20160309)
 fa <- fontawesome(c("fa-github", "fa-weibo", "fa-twitter", "fa-android", "fa-coffee"))
 d <- data.frame(
@@ -125,7 +141,7 @@ ggplot(d, aes(x, y, color = label, label = label)) +
 
 A corresponding `geom_fontawesome` is also provided.
 
-```{r, fig.showtext=TRUE}
+```{r, fig.showtext=TRUE, eval=has_fa_data}
 ggplot() + geom_fontawesome("fa-github", color = "black") + theme_void()
 ```
 
@@ -144,8 +160,7 @@ Consider manually opening a device (`X11()` in Linux, `quartz()` in macOS or `wi
 
 Currently, this package supports Emoji Font and Font Awesome.
 
-- `EmojiOne.ttf` is downloaded from <https://github.com/eosrei/emojione-color-font>
-- `OpenSansEmoji.ttf` is downloaded from <https://github.com/MorbZ/OpenSansEmoji>
+- `OpenMoji-Black.ttf` is downloaded from <https://github.com/hfg-gmuend/openmoji/releases/latest/download/OpenMoji-Black.ttf>
 - `fontawesome-webfont.ttf` is downloaded from <https://github.com/FortAwesome/Font-Awesome>.
 
 Feel free to fork this package to add your favorite iconic fonts.
@@ -153,6 +168,15 @@ Feel free to fork this package to add your favorite iconic fonts.
 # Bugs/Feature requests
 
 If you have any, let me know: <https://github.com/GuangchuangYu/emojifont/issues>.
+
+# Session info
+
+Here is the output of `sessionInfo()` on the system on which this document was compiled:
+
+```{r}
+sessionInfo()
+```
+ub.com/GuangchuangYu/emojifont/issues>.
 
 # Session info
 

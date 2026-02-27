@@ -10,7 +10,7 @@ Maintainer: Guangchuang Yu <guangchuangyu@gmail.com>
 Description: An implementation of using emoji and fontawesome for using in both
     base and 'ggplot2' graphics.
 Depends:
-    R (>= 3.4.0)
+    R (>= 3.5.0)
 Imports:
     ggplot2,
     proto,
@@ -19,14 +19,13 @@ Imports:
     utils,
     rlang
 Suggests:
-    colorspace,
     knitr,
     quarto,
     yulab.utils
 VignetteBuilder: quarto
 License: Artistic-2.0
 Encoding: UTF-8
-URL: https://guangchuangyu.github.io/emojifont
+URL: https://guangchuangyu.github.io/emojifont/
 BugReports: https://github.com/GuangchuangYu/emojifont/issues
 Packaged: 2011-12-28 08:16:14 UTC; root
 RoxygenNote: 7.3.3

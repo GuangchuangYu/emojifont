@@ -21,5 +21,5 @@ random emoji
 sample_emoji(3)
 }
 \author{
-guangchuang yu
+Guangchuang Yu
 }

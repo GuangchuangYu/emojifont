@@ -11,7 +11,7 @@
 #' @param ... additional parameter for geom_text
 #' @return ggplot2 layer
 #' @export
-#' @author guangchuang yu
+#' @author Guangchuang Yu
 geom_emoji <- function(alias="rose", color="#67001f", size=120, x=1, y=1, vjust=0.25, ...) {
     geom_emoji_(alias, color, size, x, y, vjust=vjust, ...)
 
@@ -29,7 +29,7 @@ geom_emoji <- function(alias="rose", color="#67001f", size=120, x=1, y=1, vjust=
 #' @param ... additional parameter for geom_text
 #' @return ggplot2 layer
 #' @export
-#' @author guangchuang yu
+#' @author Guangchuang Yu
 geom_fontawesome <- function(alias="fa-github", color="#67001f", size=120, x=1, y=1, ...) {
     geom_emoji_(alias, color, size, x, y, ..., .fun=fontawesome, family="fontawesome-webfont")
 }
@@ -37,7 +37,8 @@ geom_fontawesome <- function(alias="fa-github", color="#67001f", size=120, x=1, 
 #' @importFrom ggplot2 geom_text
 #' @importFrom ggplot2 aes
 #' @importFrom rlang sym
-geom_emoji_ <- function(alias, color="#67001f", size=120, x=1, y=1, ..., .fun=emoji, family="EmojiOne") {
+geom_emoji_ <- function(alias, color="#67001f", size=120, x=1, y=1, ..., .fun=emoji, family=NULL) {
+    if (is.null(family)) family <- default_emoji_family()
     data <- data.frame(x=x, y=y, label=.fun(alias))
     geom_text(aes(!!sym("x"), !!sym("y"), label=!!sym("label")), data=data, family=family, color=color, size=size, ...)
 }

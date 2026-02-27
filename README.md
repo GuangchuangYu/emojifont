@@ -1,12 +1,11 @@
 emojifont: Emoji Fonts for using in R
 ---------
 
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/emojifont?color=green)](https://cran.r-project.org/package=emojifont)
-![](http://cranlogs.r-pkg.org/badges/grand-total/emojifont?color=green)
-![](http://cranlogs.r-pkg.org/badges/emojifont?color=green)
-![](http://cranlogs.r-pkg.org/badges/last-week/emojifont?color=green)
-[![Research software impact](http://depsy.org/api/package/cran/emojifont/badge.svg)](http://depsy.org/package/r/emojifont)
-[![gitter](https://img.shields.io/badge/GITTER-join%20chat-green.svg)](https://gitter.im/GuangchuangYu/Bioinformatics)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/emojifont?color=green)](https://cran.r-project.org/package=emojifont)
+![](https://cranlogs.r-pkg.org/badges/grand-total/emojifont?color=green)
+![](https://cranlogs.r-pkg.org/badges/emojifont?color=green)
+![](https://cranlogs.r-pkg.org/badges/last-week/emojifont?color=green)
+[![Research software impact](https://depsy.org/api/package/cran/emojifont/badge.svg)](https://depsy.org/package/r/emojifont)
 
 
 An implementation of using emoji font in both base and 'ggplot2' graphics.
@@ -41,8 +40,7 @@ In addition to emoji font, I also packed other iconic fonts into this package.
 
 Currently, this package support Emoji Font and Font Awesome.
 
-+ `EmojiOne.ttf` is downloaded from <https://github.com/eosrei/emojione-color-font>
-+ `OpenSansEmoji.ttf` is downloaded from <https://github.com/MorbZ/OpenSansEmoji>
++ `OpenMoji-Black.ttf` is downloaded from <https://github.com/hfg-gmuend/openmoji>
 + `fontawesome-webfont.ttf` is downloaded from <https://github.com/FortAwesome/Font-Awesome>.
 
 Feel free to fork this package to add your favorite iconic fonts.
